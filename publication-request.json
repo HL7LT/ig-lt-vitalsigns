@@ -1,0 +1,14 @@
+{
+   "package-id" : "lt.hl7.fhir.base",
+   "version" : "0.1.0",
+   "path" : "https://hl7.lt/fhir/base/0.1.0",
+   "mode" : "milestone",
+   "status" : "draft",
+   "sequence" : "DSTU1",
+   "desc" : "Initial release as LT Base IG.",
+   "first" : true,
+   "title" : "Lithuanian Base FHIR Implementation Guide",
+   "ci-build" : "http://build.fhir.org/ig/HL7LT/ig-lt-base",
+   "category" : "Infrastructure",
+   "introduction" : "A set of the base FHIR conventions and resources for Lithuania."
+}
