@@ -1,39 +1,30 @@
 # Lietuvos bazės diegimo vadovas
 
-## Įvadas ir tikslas
+## Įvadas ir Tikslas
 
-**Lietuviškos bazės diegimo vadovas (LTBase IG)** nustato nacionalinį pagrindą **FHIR (Fast Healthcare Interoperability Resources)** standarto naudojimui Lietuvos skaitmeninės sveikatos ekosistemoje.
+Šis Įgyvendinimo Gidas (IG) nurodo, kaip nuosekliai atvaizduoti ir keistis pagrindiniais, objektyviais paciento klinikiniais duomenimis – gyvybiniais parodymais – naudojant Fast Healthcare Interoperability Resources (FHIR) standartą. Tikslus ir standartizuotas šių bazinių matavimų fiksavimas yra kritinis komponentas paciento būklės vertinimui, skubios pagalbos teikimui, pokyčių stebėjimui ir tiksliai diagnozei nustatyti visose sveikatos priežiūros grandyse.
 
-Pagrindinis jo tikslas – **supaprastinti FHIR diegimą ir diegimą**, pateikiant standartizuotą, bendru sutarimu pagrįstą sistemą. Tokiu būdu šiuo vadovu siekiama **užtikrinti nuoseklumą** klinikinių ir administracinių duomenų pateikime, **pagerinti sistemų sąveikumą** ir paspartinti perėjimą prie modernios, **keičiamo dydžio skaitmeninės sveikatos ekosistemos** Lietuvoje.
+## Apimtis ir Pagrindiniai Stebėjimai
 
-Šis vadovas pritaikytas prie **specifinių Lietuvos nacionalinės sveikatos priežiūros sistemos realijų, poreikių ir reguliavimo ypatybių**.
+Šis gidas pateikia struktūrizuotus FHIR profilius ir gaires pagrindiniams gyvybiniams parodymams ir susijusiems antropometriniams duomenims, įskaitant:
 
-### Apribojimai
+- **Arterinis Kraujospūdis (AKS)**: Sistolinis ir diastolinis matavimas.
+- **Širdies Susitraukimų Dažnis (ŠSD)**: Pulso matavimas.
+- **Kūno Temperatūra**: Matavimas Celsijaus laipsniais.
+- **Kvėpavimo Dažnis**: Įkvėpimų skaičius per minutę.
+- **Antropometriniai duomenys**: Ūgis (Kūno ilgis) ir Svoris (Kūno masė), kurie naudojami kūno masės indekso (KMI) skaičiavimui.
+- **Skausmo Įvertinimas**: Skausmo intensyvumo vertinimas naudojant patvirtintas skales.
 
-Šis FHIR R5 diegimo vadovas (IG) yra dar kuriamas ir dar nėra paruoštas naudoti gamyboje. Jis skirtas tik testavimo ir atsiliepimų teikimo tikslais. Turinys gali keistis, kai IG bus toliau tobulinamas.
+## Kodėl verta naudoti šį gidą?
 
-## Taikymo sritis ir komponentai
+Priimdami šiuos profilius, diegėjai gali užtikrinti vieningą ir patikimą požiūrį į klinikinės informacijos valdymą:
 
-LTBase IG teikia išsamią artefaktų kolekciją, skirtą pakartotinai naudoti visose sveikatos IT sistemose ir diegimo projektuose visoje Lietuvos Respublikoje. Ji yra oficialus pagrindinės FHIR atitikties šalyje dokumentacijos šaltinis.
+- **Sąveika**: Palengvinti nepertraukiamą, semantinį gyvybinių parodymų duomenų mainus tarp matavimo prietaisų, Elektroninių sveikatos įrašų (ESI) sistemų, intensyvios terapijos skyrių monitorių ir telemedicinos sprendimų.
+- **Klinikinė Kokybė**: Užtikrinti duomenų patikimumą ir tikslumą per privalomus matavimo vienetus (UCUM) ir standartizuotus kodus (LOINC, SNOMED CT), kurie yra būtini automatizuotam KMI ir kitiems gyvybinės svarbos rodiklių skaičiavimams.
+- **Saugumas ir Sprendimų Palaikymas**: Sudaryti sąlygas automatinėms pavojaus signalų (alarmo) taisyklėms ir klinikinio sprendimo palaikymo sistemoms, kurios greitai atpažįsta kritinius paciento būklės pokyčius, remiantis standartizuotais duomenimis.
 
-Taikymo sritis apima:
+Naršykite toliau pateiktas skiltis, kad pasiektumėte profilius, terminologijos susiejimus ir išsamius pavyzdžius, reikalingus gyvybinių parodymų standartui įdiegti.
 
-- **LT bazinius profilius:** **laisvai apribotų profilių** rinkinį, susijusį su pagrindiniais FHIR ištekliais (pvz., pacientu, specialistu, organizacija, vieta). Šie profiliai nurodo minimalius atitikties lūkesčius, pritaiko išteklių elementus prie vietos poreikių ir nustato **bendrą skaitmeninės sveikatos priežiūros palaikymo bazę** Respublikoje.
-- **Nacionaliniai identifikatoriai ir pavadinimų sistemos:** nacionaliniams identifikatoriams (pvz., asmens kodas, medicininių licencijų numeriai) ir atitinkamoms pavadinimų sistemoms, kurios **privalo būti naudojamos** unikaliam pacientų, specialistų ir organizacijų identifikavimui, apibrėžimas.
-- **Vietinė terminologija:** paruoštos naudoti **kodų sistemos ir reikšmių rinkiniai**, specialiai sukurti Lietuvos sveikatos priežiūros duomenų mainams. Kai įmanoma, tai apima tarptautinių terminų (pvz., SNOMED CT, LOINC, TLK-10) vertimus ir išplėtimus, siekiant paremti nacionalinius kodus ir klasifikacijas.
-
-- **Pagrindiniai principai:** Mokomoji medžiaga ir politikos gairės, skirtos padėti tiekėjams ir kūrėjams kurti išvestinius profilius, valdyti plėtinius ir užtikrinti duomenų kokybę.
-
-## Įgyvendinimo pagrindiniai principai
-
-LTBase profiliai sukurti taip, kad būtų lankstūs ir lengvai pakartotinai panaudojami įvairiais naudojimo atvejais:
-
-1. **Pagrindas, o ne galutinis produktas:** Baziniai profiliai skirti kaip **atskaitos taškas** norint pasinaudoti FHIR siūlomomis galimybėmis. Jie neturėtų būti laikomi tinkamais visiškai aprašytai diegiamai paslaugai, o turi būti naudojami kaip **bazinis profilis, iš kurio galima gauti papildomus, konkrečiam naudojimo atvejui skirtus profilius** (pvz., konkrečiam klinikiniam registrui arba duomenų bendrinimo paslaugai).
-2. **Minimalūs apribojimai (atviras pasaulis):** Remiantis FHIR metodo pavyzdžiu, dauguma kardinalumo ir susiejimo stiprumų yra **minimalūs**, kad būtų palaikomas atvirojo pasaulio modeliavimas, leidžiant išvestiniams profiliams juos dar labiau apriboti pagal poreikį.
-
-3. **Privalomo palaikymo (MS) žymės:** Elementai, kurie yra svarbūs nacionaliniam duomenų mainams (pvz., paciento identifikatoriai, vardas, pavardė, lytis, gimimo data), yra aiškiai pažymėti žyme **Privalomo palaikymo (MS)**, nurodant, kad naudojančios sistemos turi gebėti apdoroti ir naudoti šią informaciją.
-
----
 
 ## IP teiginiai
 <!-- { // dar nepalaiko i18n IG leidėjuje: % include ip-statements.xhtml %} -->
