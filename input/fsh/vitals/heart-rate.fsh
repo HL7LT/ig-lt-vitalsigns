@@ -101,3 +101,36 @@ Invariant: vshree-2
 Description: "If there is no component or hasMember element then either a value[x] or a data absent reason must be present."
 * severity = #error
 * expression = "(component.empty() and hasMember.empty()) implies (dataAbsentReason.exists() or value.exists())"
+
+
+// Example: Heart Rate
+Instance: example-heart-rate
+InstanceOf: HeartRate
+Usage: #example
+Title: "Example Heart Rate Measurement"
+Description: "Example observation representing the patient's heart rate measured at rest."
+* status = #final
+* category[VSCat] = $observation-category#vital-signs "Vital Signs"
+* category[HeartRateCode] = $loinc#8867-4 "Heart rate"
+* code = $loinc#8867-4 "Heart rate"
+* subject = Reference(example-patient)
+* effectiveDateTime = "2025-10-28T09:25:00+03:00"
+* valueQuantity.value = 72
+* valueQuantity.unit = "/min"
+* valueQuantity.system = "http://unitsofmeasure.org"
+* valueQuantity.code = #/min
+* method = $sct#113011001 "Palpation (procedure)"
+* extension[exerciseAssociation].valueCodeableConcept = $sct#229065009 "Exercise therapy (regime/therapy)"
+* extension[sleepStatus].valueCodeableConcept = $sct#248220008 "Asleep (finding)"
+* interpretation = $observation-interpretation#N "Normal"
+* device = Reference(example-heart-rate-device)
+* bodyStructure = Reference(example-body-structure-vitals)
+* note.text = "Measured manually while patient was seated and relaxed."
+
+Instance: example-heart-rate-device
+InstanceOf: HeartRateMeasurementDevice
+Usage: #example
+Title: "Example Heart Rate Measurement Device"
+Description: "An automated digital heart rate monitor used for the measurement."
+* status = #active
+* type.text = "Digital heart rate monitor"

@@ -98,3 +98,35 @@ Description: "For single vital signs observations (that do not require use of co
 * severity = #error
 * expression = "dataAbsentReason.exists() or value.exists()"
 // * source = "http://hl7.org/fhir/StructureDefinition/vitalsigns"
+
+
+
+Instance: example-body-height-device
+InstanceOf: BodyHeightMeasurementDevice
+Usage: #example
+Title: "Example Body Height Measurement Device"
+Description: "A stadiometer used to measure the patient’s height."
+* status = #active
+* type = $sct#24311000205101 "Stadiometer (physical object)"
+
+Instance: example-body-height
+InstanceOf: BodyHeight
+Usage: #example
+Title: "Example Body Height Measurement"
+Description: "Example observation representing the patient's body height measured in centimeters."
+* status = #final
+* category[VSCat] = $observation-category#vital-signs "Vital Signs"
+* category[BodyHeightCode] = $loinc#8302-2 "Body height"
+* code = $loinc#8302-2 "Body height"
+* subject = Reference(example-patient)
+* effectiveDateTime = "2025-10-27T09:15:00+03:00"
+* valueQuantity.value = 176
+* valueQuantity.unit = "cm"
+* valueQuantity.system = "http://unitsofmeasure.org"
+* valueQuantity.code = #cm
+* method.text = "Measured using a stadiometer"
+* device = Reference(example-body-height-device)
+* note.text = "Height measured without shoes during routine examination."
+
+
+

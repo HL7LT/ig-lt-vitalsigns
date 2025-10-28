@@ -76,3 +76,35 @@ Invariant: vs-ns-2
 Description: "For single vital signs observations (that do not require use of components or hasMember), then either a value[x] or a data absent reason must be present."
 * severity = #error
 * expression = "dataAbsentReason.exists() or value.exists()"
+
+
+// Example: Number of Steps
+Instance: example-number-of-steps
+InstanceOf: NumberOfSteps
+Usage: #example
+Title: "Example Number of Steps Measurement"
+Description: "Example observation representing the number of steps taken by a person in 24 hours."
+* status = #final
+* category[VSCat] = $observation-category#vital-signs "Vital Signs"
+* category[NumberOfStepsCode] = $loinc#41950-7 "Number of steps in 24 hour Measured"
+* code = $loinc#41950-7 "Number of steps in 24 hour Measured"
+* subject = Reference(example-patient)
+* effectiveDateTime = "2025-10-27T23:59:00+03:00"
+* valueQuantity.value = 8642
+* valueQuantity.unit = "{#}/{24.h}"
+* valueQuantity.system = "http://unitsofmeasure.org"
+* valueQuantity.code = #/d
+* interpretation = $observation-interpretation#N "Normal"
+* device = Reference(example-physical-activity-device)
+* note.text = "Steps counted automatically using a smartwatch throughout the day."
+
+Instance: example-physical-activity-device
+InstanceOf: PhysicalActivityMeasurementDevice
+Usage: #example
+Title: "Example Physical Activity Measurement Device"
+Description: "A smartwatch used to measure and record the number of steps taken."
+* status = #active
+* manufacturer = "Fitbit Inc."
+* displayName = "Fitbit Versa 4"
+* type.text = "Activity tracker"
+

@@ -98,3 +98,33 @@ Description: "For single vital signs observations (that do not require use of co
 * severity = #error
 * expression = "dataAbsentReason.exists() or value.exists()"
 // * source = "http://hl7.org/fhir/StructureDefinition/vitalsigns"
+
+Instance: example-body-weight-device
+InstanceOf: BodyWeightMeasurementDevice
+Usage: #example
+Title: "Example Body Weight Measurement Device"
+Description: "A weighing scale used to measure the patient's body weight."
+* status = #active
+* type.text = "Weighing scale"
+
+// Example: Body Weight
+Instance: example-body-weight
+InstanceOf: BodyWeight
+Usage: #example
+Title: "Example Body Weight Measurement"
+Description: "Example observation representing the patient's body weight measured in kilograms."
+* status = #final
+* category[VSCat] = $observation-category#vital-signs "Vital Signs"
+* category[BodyWeightCode] = $loinc#29463-7 "Body weight"
+* code = $loinc#29463-7 "Body weight"
+* subject = Reference(example-patient)
+* effectiveDateTime = "2025-10-27T09:20:00+03:00"
+* valueQuantity.value = 68.4
+* valueQuantity.unit = "kg"
+* valueQuantity.system = "http://unitsofmeasure.org"
+* valueQuantity.code = #kg
+* method = $sct#39857003 "Weighing patient (procedure)"
+* extension[associatedSituation].valueCodeableConcept = $sct#225494003 "Wears undignified clothing (finding)"
+* device = Reference(example-body-weight-device)
+* note.text = "Measured after breakfast using a calibrated digital scale."
+
