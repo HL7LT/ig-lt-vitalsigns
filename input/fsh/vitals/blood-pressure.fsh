@@ -41,10 +41,16 @@ Description: "Blood Pressure Panel; a grouping of systolic, diastolic, and mean 
 * code ^binding.description = "This identifies the set of LOINC codes that are appropriate for representing an arterial systolic and diastolic BP panel of vital sign measurements in Observation.code."
 * value[x] ..0
 * component ..* MS
-* component ^slicing.discriminator[0].type = #value
-* component ^slicing.discriminator[=].path = "extension.url"
-* component ^slicing.discriminator[+].type = #pattern
-* component ^slicing.discriminator[=].path = "extension.value"
+// * component ^slicing.discriminator[0].type = #value
+// * component ^slicing.discriminator[=].path = "extension.url"
+// * component ^slicing.discriminator[+].type = #pattern
+// * component ^slicing.discriminator[=].path = "extension.value"
+
+* component ^slicing.discriminator[0].type = #pattern
+* component ^slicing.discriminator[0].path = "code"
+* component ^slicing.rules = #open
+
+
 * component ^slicing.ordered = false
 * component ^slicing.rules = #open
 * component ^short = "Used when reporting systolic and diastolic blood pressure."
@@ -187,9 +193,10 @@ Parent: Device
 Id: device-blood-pressure
 Title: "Blood Pressure Measurement Device"
 
-* type from BloodPressureMeasurementDeviceType (required)
+* type from BloodPressureMeasurementDeviceType (extensible)
 * property ^slicing.discriminator.type = #value
-* property ^slicing.discriminator.path = "$this"
+// * property ^slicing.discriminator.path = "$this"
+* property ^slicing.discriminator.path = "$type"
 * property ^slicing.rules = #open
 * property contains BPCuffSize 0..1 MS
 * property[BPCuffSize] ^short = "Cuff Size"
@@ -216,3 +223,61 @@ Invariant: vsp-3-dbp
 Description: "If the diastolic BP component exists and there is no component value a component data absent reason must be present."
 * severity = #error
 * expression = "component.value.exists() or component.dataAbsentReason.exists()"
+
+
+
+Instance: example-blood-pressure
+InstanceOf: BloodPressurePanel
+Title: "Example Blood Pressure Observation"
+Description: "Example observation representing a patient’s blood pressure measurement."
+Usage: #example
+
+* status = #final
+* category[VSCat] = $observation-category#vital-signs "Vital Signs"
+* category[BPCode] = $loinc#85354-9 "Blood pressure panel with all children optional"
+* code = $loinc#85354-9 "Blood pressure panel with all children optional"
+* subject = Reference(example-patient)
+* effectiveDateTime = "2025-08-01T10:00:00Z"
+* interpretation = $observation-interpretation#N "Normal"
+* device = Reference(example-blood-pressure-device)
+* note.text = "Patient was seated for 5 minutes before measurement."
+
+// Systolic BP component 
+//* component[SystolicBP].extension[SBPCode].url = "http://hl7.lt/fhir/StructureDefinition/ObsComponentCategory"
+* component[SystolicBP].extension[SBPCode].valueCodeableConcept = $loinc#8480-6 "Systolic blood pressure"
+* component[SystolicBP].code = $loinc#8480-6 "Systolic blood pressure"
+* component[SystolicBP].valueQuantity.value = 117
+* component[SystolicBP].valueQuantity.unit = "mmHg"
+* component[SystolicBP].valueQuantity.system = "http://unitsofmeasure.org"
+* component[SystolicBP].valueQuantity.code = #mm[Hg]
+* component[SystolicBP].interpretation = $observation-interpretation#N "Normal"
+
+// Diastolic BP component 
+//* component[DiastolicBP].extension[DBPCode].url = "http://hl7.lt/fhir/StructureDefinition/ObsComponentCategory"
+* component[DiastolicBP].extension[DBPCode].valueCodeableConcept = $loinc#8462-4 "Diastolic blood pressure"
+* component[DiastolicBP].code = $loinc#8462-4 "Diastolic blood pressure"
+* component[DiastolicBP].valueQuantity.value = 78
+* component[DiastolicBP].valueQuantity.unit = "mmHg"
+* component[DiastolicBP].valueQuantity.system = "http://unitsofmeasure.org"
+* component[DiastolicBP].valueQuantity.code = #mm[Hg]
+* component[DiastolicBP].interpretation = $observation-interpretation#N "Normal"
+
+// Mean Arterial BP component (optional) 
+* component[MeanArterialBP].code = $loinc#8478-0 "Mean blood pressure"
+* component[MeanArterialBP].valueQuantity.value = 91
+* component[MeanArterialBP].valueQuantity.unit = "mmHg"
+* component[MeanArterialBP].valueQuantity.system = "http://unitsofmeasure.org"
+* component[MeanArterialBP].valueQuantity.code = #mm[Hg]
+
+
+Instance: example-blood-pressure-device
+InstanceOf: BloodPressureMeasurementDevice
+Title: "Example Blood Pressure Measurement Device"
+Description: "Automated digital blood pressure monitor with adult cuff."
+Usage: #example
+
+* status = #active
+* type = $sct#258057004 "Non-invasive blood pressure monitor (physical object)"
+* manufacturer = "Omron Healthcare"
+* property[BPCuffSize].type = urn:iso:std:iso:11073:10101#528391
+* property[BPCuffSize].valueCodeableConcept = $sct#720737000 "Blood pressure cuff, adult size (physical object) |"
