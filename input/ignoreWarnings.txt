@@ -25,4 +25,4 @@ Resource has a language (lt), and the XHTML has a lang (en), but they differ
 Resource has a language (ru), and the XHTML has a lang (en), but they differ
 
 # 
-the canonical URL (https://hl7.lt/fhir/base/StructureDefinition/AssociatedSituationExt) does not match the URL (http://hl7.org/fhir/us/vitals/StructureDefinition/AssociatedSituationExt). Use the special-url parameter if you really mean for it not to match
+the canonical URL (https://hl7.lt/fhir/base/StructureDefinition/AssociatedSituation) does not match the URL (http://hl7.org/fhir/us/vitals/StructureDefinition/AssociatedSituation). Use the special-url parameter if you really mean for it not to match

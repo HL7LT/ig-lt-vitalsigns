@@ -81,6 +81,8 @@ Alias: $valueset-supplement = http://hl7.org/fhir/StructureDefinition/valueset-s
 // VitalSigns
 Alias: $ucum-vitalsignsrate = http://hl7.org/fhir/ValueSet/ucum-vitalsignsrate
 Alias: $observation-category = http://terminology.hl7.org/CodeSystem/observation-category
+Alias: $observation-component-category = http://hl7.org/fhir/StructureDefinition/observation-componentCategory
+Alias: $lateralityVS = http://hl7.org/fhir/ValueSet/bodystructure-relative-location
 
 // Alias: $AssociatedSituationExt = http://hl7.org/fhir/us/vitals/StructureDefinition/AssociatedSituationExt
 // Alias: $MeasurementSettingExt = http://hl7.org/fhir/us/vitals/StructureDefinition/MeasurementSettingExt

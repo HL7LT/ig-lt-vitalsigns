@@ -31,9 +31,9 @@ Description: "Waist circumference by Tape measure. The measurement in centimeter
 * category[WaistCircumferenceCode] = $loinc#8280-0 "Waist Circumference at umbilicus by Tape measure"
 * category[WaistCircumferenceCode] ^definition = "This waist circumference category"
 
-* code from WaistCircumferenceCodes (preferred)
-* code ^short = "Waist Circumference"
-* code ^definition = "Waist Circumference."
+* code from WaistCircumferenceObservation (preferred)
+* code ^short = "Waist Circumference observation"
+* code ^definition = "Waist Circumference observation."
 * code ^binding.extension[0].url = "http://hl7.org/fhir/StructureDefinition/elementdefinition-bindingName"
 * code ^binding.extension[=].valueString = "VitalSignsWaistCircumference"
 * code ^binding.description = "This identifies the set of LOINC codes that are appropriate for representing waist circumference vital sign measurements in Observation.code."

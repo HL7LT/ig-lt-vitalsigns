@@ -1,6 +1,6 @@
 
-Extension: SleepStatusExt
-Id: sleep-status-ext
+Extension: SleepStatus
+Id: sleep-status
 Title: "Sleep Status Extension"
 Description: "The state of wakefulness during the measurement."
 * ^extension[0].url = "http://hl7.org/fhir/StructureDefinition/structuredefinition-wg"

@@ -3,7 +3,7 @@ Parent: BodyStructure
 Id: body-structure-vital-signs
 Title: "Body Structure for Vital Signs"
 * includedStructure ..1 MS
-  * structure from BloodPressureMeasurementBodyLocationPrecoordinated (required)
+  * structure from BloodPressureMeasurementBodyLocation (required)
   * structure ^short = "A set of codes that describe site where on/in the body an observation or procedure took place"
   * structure MS
   * laterality from $lateralityVS (required)

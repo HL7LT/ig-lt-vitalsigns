@@ -1,4 +1,4 @@
-Extension: ObsDeviceCode
+Extension: XxxxxObsDeviceCode
 Id: observation-deviceCode
 Title: "Observation Device Code"
 Description: "A code representing the the type of device used for this observation. This extension is deprecated, as there are alternate ways to represent this information through the use of Observation.device and the Device.type element."

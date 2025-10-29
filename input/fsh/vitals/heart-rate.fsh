@@ -30,36 +30,36 @@ Description: "The number of heart beats in a minute."
 * category ^slicing.discriminator.type = #pattern
 * category ^slicing.discriminator.path = "$this"
 * category ^slicing.rules = #open
-* category contains VSCat 1..1 MS and HeartRateCode 1..1 MS
+* category contains VSCat 1..1 MS and HeartRateCategory 1..1 MS
 * category[VSCat] = $observation-category#vital-signs
 * category[VSCat] ^definition = "This vital signs category"
-* category[HeartRateCode] = $loinc#8867-4
-* code from VitalSignsHeartRate (preferred)
+* category[HeartRateCategory] = $loinc#8867-4
+* code from HeartRateObservation (preferred)
 * code ^short = "Heart Rate"
 * code ^definition = "Heart Rate."
 * code ^binding.extension[0].url = "http://hl7.org/fhir/StructureDefinition/elementdefinition-bindingName"
 * code ^binding.extension[=].valueString = "VitalSignsHeartRate"
 * code ^binding.description = "This identifies the set of LOINC codes that are appropriate for representing heart rate vital sign measurements in Observation.code. <br/>R6! Proper link is https://build.fhir.org/valueset-observation-vitalsign-heartrate.html <br/>TODO: own valieset that based on SNOMED"
 
-* valueQuantity from VitalSignsRateUnits (required)
+* valueQuantity from VitalSignsRateUnit (required)
 * valueQuantity ^short = "Common UCUM rate units for vital signs including heart and respiratory rate. <br/>R6! Proper link is https://build.fhir.org/valueset-ucum-vitalsignsrate.html."
 * valueQuantity ^binding.extension[0].url = "http://hl7.org/fhir/tools/StructureDefinition/binding-definition"
 * valueQuantity ^binding.extension[=].valueMarkdown = "Common UCUM rate units for vital signs including heart and respiratory rate."
 * valueQuantity ^binding.extension[+].url = "http://hl7.org/fhir/StructureDefinition/elementdefinition-bindingName"
-* valueQuantity ^binding.extension[=].valueString = "VitalSignsRateUnits"
+* valueQuantity ^binding.extension[=].valueString = "VitalSignsRateUnit"
 * valueQuantity ^binding.description = "/min"
 // <<
 
 //>> Begin of the CIMI specification
 * extension contains
 //    ObsDeviceCode named measurementDevice 0..1 MS and
-    ExerciseAssociationExt named exerciseAssociation 0..1 MS and
+    ExerciseAssociation named exerciseAssociation 0..1 MS and
 //    ObsBodyPosition named bodyPosition 0..1 MS and
-    MeasurementSettingExt named measurementSetting 0..1 MS and
-    SleepStatusExt named sleepStatus 0..1 MS and
-    AssociatedSituationExt named associatedSituation 0..1 MS
+    MeasurementSetting named measurementSetting 0..1 MS and
+    SleepStatus named sleepStatus 0..1 MS and
+    AssociatedSituation named associatedSituation 0..1 MS
 // * extension[measurementDevice] ^short = "Measurement Device Type"
-// * extension[measurementDevice].value[x] from HeartRateMeasurementDeviceVS (extensible)
+// * extension[measurementDevice].value[x] from HeartRateMeasurementDevice (extensible)
 * extension[exerciseAssociation] ^short = "Exercise Association"
 //* extension[bodyPosition] ^short = "Body Position"
 //* extension[bodyPosition].value[x] from BodyPosition (extensible)
@@ -68,10 +68,10 @@ Description: "The number of heart beats in a minute."
 * extension[associatedSituation] ^short = "Associated Situation"
 
 * bodySite MS
-* bodySite from HeartRateMeasurementBodyLocationPrecoordinated (extensible)
+* bodySite from HeartRateMeasurementBodyLocation (extensible)
 * method MS
 * method from HeartRateMeasurementMethod (extensible)
-* interpretation from NumericResultInterpretationNom (extensible)
+* interpretation from NumericResultInterpretation (extensible)
 //>> End of the CIMI specification
 
 * component 0..0
@@ -88,7 +88,7 @@ Parent: Device
 Id: device-heart-rate
 Title: "Heart Rate Measurement Device"
 
-* type from HeartRateMeasurementDeviceVS (extensible)
+* type from HeartRateMeasurementDevice (extensible)
 
 
 
@@ -111,7 +111,7 @@ Title: "Example Heart Rate Measurement"
 Description: "Example observation representing the patient's heart rate measured at rest."
 * status = #final
 * category[VSCat] = $observation-category#vital-signs "Vital Signs"
-* category[HeartRateCode] = $loinc#8867-4 "Heart rate"
+* category[HeartRateCategory] = $loinc#8867-4 "Heart rate"
 * code = $loinc#8867-4 "Heart rate"
 * subject = Reference(example-patient)
 * effectiveDateTime = "2025-10-28T09:25:00+03:00"

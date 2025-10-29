@@ -1,5 +1,5 @@
-Extension: ExerciseAssociationExt
-Id: ExerciseAssociationExt
+Extension: ExerciseAssociation
+Id: exercise-association
 Title: "Exercise Association"
 Description: "The exercise state associated with the measurement."
 * ^extension[0].url = "http://hl7.org/fhir/StructureDefinition/structuredefinition-wg"

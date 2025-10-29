@@ -1,5 +1,5 @@
-Extension: BodyPositionExt
-Id: body-position-ext
+Extension: BodyPosition
+Id: body-position
 Title: "Body Position Extension"
 Description: "The position of the body when the observation was done, e.g. standing, sitting. To be used only when the body position in not precoordinated in the observation code."
 Context: Observation, Specimen.collection

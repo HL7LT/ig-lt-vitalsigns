@@ -1,6 +1,3 @@
-//Alias: $heightLengthMeasDeviceVS = http://hl7.org/fhir/us/vitals/ValueSet/heightLengthMeasDeviceVS
-//Alias: $heightLengthMeasMethodVS = http://hl7.org/fhir/us/vitals/ValueSet/heightLengthMeasMethodVS
-
 Profile: BodyHeight
 Parent: LTBaseObservation
 Id: body-height
@@ -24,20 +21,20 @@ Description: "The measurement in centimeters or feet and inches from the top of 
 * effective[x] ^condition = "vs-bh-1"
 // << 
 
-//> FHIR BodyWeight profile
+//> FHIR BodyHeight profile
 * obeys vs-bh-2
-* . ^short = "Body Height Profile (EE)"
-* . ^definition = "This profile defines  how to represent body weight observations in FHIR using a standard LOINC code and UCUM units of measure."
-* category ^slicing.discriminator.type = #pattern
+* . ^short = "Body Height Profile"
+* . ^definition = "This profile defines  how to represent body height observations in FHIR using a standard LOINC code and UCUM units of measure."
+* category ^slicing.discriminator.type = #value
 * category ^slicing.discriminator.path = "$this"
 * category ^slicing.rules = #open
-* category contains VSCat 1..1 MS and BodyHeightCode 1..1 MS
+* category contains VSCat 1..1 MS and BodyHeightCategory 1..1 MS
 * category[VSCat] = $observation-category#vital-signs
 * category[VSCat] ^definition = "This vital signs category"
-* category[BodyHeightCode] = $loinc#8302-2
-* category[BodyHeightCode] ^definition = "This body weight category"
+* category[BodyHeightCategory] = $loinc#8302-2
+* category[BodyHeightCategory] ^definition = "This body height category"
 
-* code from VitalSignsBodyHeight (preferred)
+* code from BodyHeightObservation (preferred)
 * code ^short = "Body Height"
 * code ^definition = "Body Height."
 * code ^binding.extension[0].url = "http://hl7.org/fhir/StructureDefinition/elementdefinition-bindingName"
@@ -59,7 +56,7 @@ Description: "The measurement in centimeters or feet and inches from the top of 
 * extension contains
 //    $observation-bodyPosition named bodyPosition 0..1 MS and
 //    $observation-deviceCode named measurementDevice 0..1 MS and
-    MeasurementSettingExt named MeasurementSetting 0..1 MS
+    MeasurementSetting named MeasurementSetting 0..1 MS
 // * extension[bodyPosition] ^short = "Body Position"
 // * extension[bodyPosition].value[x] from $heightBodyPositionVS (extensible)
 // * extension[measurementDevice] ^short = "Measurement Device Type"
@@ -116,7 +113,7 @@ Title: "Example Body Height Measurement"
 Description: "Example observation representing the patient's body height measured in centimeters."
 * status = #final
 * category[VSCat] = $observation-category#vital-signs "Vital Signs"
-* category[BodyHeightCode] = $loinc#8302-2 "Body height"
+* category[BodyHeightCategory] = $loinc#8302-2 "Body height"
 * code = $loinc#8302-2 "Body height"
 * subject = Reference(example-patient)
 * effectiveDateTime = "2025-10-27T09:15:00+03:00"

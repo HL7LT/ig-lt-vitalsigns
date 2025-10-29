@@ -33,12 +33,12 @@ Description: "Body Mass Index (BMI) is a measure of body fat based on height and
 * code ^definition = "Body Mass Index"
 
 * valueQuantity MS
-* valueQuantity from BMIUnits (required)
+* valueQuantity from BMIUnit (required)
 * valueQuantity ^condition = "vs-bh-2"
 * valueQuantity ^binding.extension[0].url = "http://hl7.org/fhir/tools/StructureDefinition/binding-definition"
 * valueQuantity ^binding.extension[=].valueMarkdown = "Common UCUM units for BMI."
 * valueQuantity ^binding.extension[+].url = "http://hl7.org/fhir/StructureDefinition/elementdefinition-bindingName"
-* valueQuantity ^binding.extension[=].valueString = "BMIUnits"
+* valueQuantity ^binding.extension[=].valueString = "BMIUnit"
 * valueQuantity ^binding.description = "kg/m2"
 
 * dataAbsentReason MS

@@ -1,5 +1,5 @@
-Extension: MeasurementSettingExt
-Id: measurement-setting-ext
+Extension: MeasurementSetting
+Id: measurement-setting
 Title: "Measurement Setting Extension"
 Description: "The location or setting the subject was in when the measurement was obtained. For example, home, clinic, hospital. etc."
 * ^extension[0].url = "http://hl7.org/fhir/StructureDefinition/structuredefinition-wg"

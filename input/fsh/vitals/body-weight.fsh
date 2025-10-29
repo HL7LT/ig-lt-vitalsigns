@@ -35,11 +35,11 @@ Description: "The measured mass of an individual's body."
 * category[BodyWeightCode] = $loinc#29463-7
 * category[BodyWeightCode] ^definition = "This body weight category"
 
-* code from VitalSignsBodyWeight (preferred)
+* code from BodyWeightObservation (preferred)
 * code ^short = "Body Weight"
 * code ^definition = "Body Weight."
 * code ^binding.extension[0].url = "http://hl7.org/fhir/StructureDefinition/elementdefinition-bindingName"
-* code ^binding.extension[=].valueString = "VitalSignsBodyWeight"
+* code ^binding.extension[=].valueString = "BodyWeightObservation"
 * code ^binding.description = "This identifies the set of LOINC codes that are appropriate for representing body weight vital sign measurements in Observation.code."
 
 * valueQuantity MS
@@ -58,8 +58,8 @@ Description: "The measured mass of an individual's body."
 //>> CIMI starts
 * extension contains
 //    $observation-deviceCode named measurmentDevice 0..1 MS and
-    AssociatedSituationExt named associatedSituation 0..1 MS and
-    MeasurementSettingExt named measurementSetting 0..1 MS
+    AssociatedSituation named associatedSituation 0..1 MS and
+    MeasurementSetting named measurementSetting 0..1 MS
 //* extension[measurmentDevice] ^short = "Measurement Device Type"
 //* extension[measurmentDevice].value[x] from $weightMeasurementDeviceVS (extensible)
 * extension[associatedSituation] ^short = "Associated Situation"

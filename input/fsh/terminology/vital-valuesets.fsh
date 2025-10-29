@@ -34,8 +34,8 @@ Description: "A set of codes that are defined in the Solor extension to the SNOM
 
 
 
-ValueSet: BodyLengthUnits
-Id: ucum-bodylength
+ValueSet: BodyLengthUnit
+Id: body-length-unit
 Title: "Body Length Units"
 Description: "UCUM units for recording body length measures such as height and head circumference"
 * ^meta.lastUpdated = "2025-10-26T17:42:56.640+00:00"
@@ -44,7 +44,7 @@ Description: "UCUM units for recording body length measures such as height and h
 * ^extension[=].valueBoolean = false
 * ^extension[+].url = "http://hl7.org/fhir/StructureDefinition/structuredefinition-wg"
 * ^extension[=].valueCode = #oo
-//* ^url = "http://hl7.org/fhir/ValueSet/ucum-bodylength"
+* ^url = "https://hl7.lt/fhir/tx/ValueSet/body-length-unit"
 * ^identifier[0].system = "urn:ietf:rfc:3986"
 * ^identifier[=].value = "urn:oid:2.16.840.1.113883.4.642.3.958"
 * ^identifier[+].use = #old
@@ -60,8 +60,8 @@ Description: "UCUM units for recording body length measures such as height and h
 * $ucum#[in_i]
 
 
-ValueSet: BMIUnits
-Id: ucum-bmi
+ValueSet: BMIUnit
+Id: bmi-unit
 Title: "BMI Units"
 Description: "UCUM units for recording BMI"
 * ^meta.lastUpdated = "2025-10-26T17:42:56.640+00:00"
@@ -70,7 +70,7 @@ Description: "UCUM units for recording BMI"
 * ^extension[=].valueBoolean = true
 * ^extension[+].url = "http://hl7.org/fhir/StructureDefinition/structuredefinition-wg"
 * ^extension[=].valueCode = #oo
-//* ^url = "http://hl7.org/fhir/ValueSet/ucum-bmi"
+* ^url = "https://hl7.lt/fhir/tx/ValueSet/bmi-unit"
 * ^version = "6.0.0"
 * ^status = #active
 * ^experimental = false
@@ -80,11 +80,12 @@ Description: "UCUM units for recording BMI"
 * $ucum#kg/m2 "kilogram / (meter ^ 2)"
 
 
-ValueSet: WaistCircumferenceCodes
-Id: waist-circumference-codes
-Title: "Waist Circumference Codes"
-Description: "HL7 LT value set for waist circumference."
+ValueSet: WaistCircumferenceObservation
+Id: waist-circumference-obervation
+Title: "Waist Circumference Observation"
+Description: "Waist circumference observations."
 * ^language = #en
+* ^url = "https://hl7.lt/fhir/tx/ValueSet/waist-circumference-observation"
 * ^version = "1.0.0"
 * ^status = #active
 * ^experimental = false
@@ -97,7 +98,7 @@ ValueSet: ExertionPhase
 Id: exertion-phase
 Title: "Exertion Phase value set"
 Description: "SELECT SNOMED CT code system values that contains terms for exercise associated with a measurement."
-//* ^url = "http://hl7.org/fhir/us/vitals/ValueSet/exertionPhaseVS"
+* ^url = "https://hl7.lt/fhir/tx/ValueSet/exertion-phase"
 * ^version = "1.0.0"
 * ^status = #active
 * ^experimental = false
@@ -119,7 +120,7 @@ ValueSet: SleepStatus
 Id: sleep-status
 Title: "Sleep Status value set"
 Description: "SELECT SNOMED CT code system values that contains terms used to indicate the state of wakefulness during measurement."
-//* ^url = "http://hl7.org/fhir/us/vitals/ValueSet/sleepStatusVS"
+* ^url = "https://hl7.lt/fhir/tx/ValueSet/sleep-status"
 * ^version = "1.0.0"
 * ^status = #active
 * ^experimental = false
@@ -136,10 +137,10 @@ Description: "SELECT SNOMED CT code system values that contains terms used to in
 * $sct#248218005 "Awake (finding)"
 
 ValueSet: NumericResultInterpretationNonPanic
-Id: numeric-result-int-non-panic
+Id: numeric-result-interpretation-non-panic
 Title: "Numeric Result Interpretation without panic values, value set"
 Description: "The HL7 V3:ObservationInterpretation code set (OID: 2.16.840.1.113883.5.83) that describes interpretations associated with a measured value, constrained to terms that are not those associated with 'panic' terms."
-//* ^url = "http://hl7.org/fhir/us/vitals/ValueSet/NumericResultIntNonPanicVS"
+* ^url = "https://hl7.lt/fhir/tx/ValueSet/numeric-result-interpretation-non-panic"
 * ^version = "1.0.0"
 * ^status = #active
 * ^experimental = false
@@ -156,11 +157,11 @@ Description: "The HL7 V3:ObservationInterpretation code set (OID: 2.16.840.1.113
 * $observation-interpretation#H "Higher Than Normal"
 * $observation-interpretation#L "Lower Than Normal"
 
-ValueSet: NumericResultInterpretationNom
-Id: numeric-result-int
+ValueSet: NumericResultInterpretation
+Id: numeric-result-interpretation
 Title: "Numeric Result Interpretation value set"
 Description: "The HL7 V3:ObservationInterpretation code set (OID: 2.16.840.1.113883.5.83) that describes interpretations associated with a measured value."
-//* ^url = "http://hl7.org/fhir/us/vitals/ValueSet/NumericResultIntVS"
+* ^url = "https://hl7.lt/fhir/tx/ValueSet/numeric-result-interpretation"
 * ^version = "1.0.0"
 * ^status = #active
 * ^experimental = false
@@ -185,7 +186,7 @@ ValueSet: BodyPosition
 Id: body-position
 Title: "Body Position value set"
 Description: "SELECT SNOMED CT code system values the position in which the individual was in during a measurement."
-//* ^url = "http://hl7.org/fhir/us/vitals/ValueSet/bodyPositionVS"
+* ^url = "https://hl7.lt/fhir/tx/ValueSet/body-position"
 * ^version = "1.0.0"
 * ^status = #active
 * ^experimental = false
@@ -212,15 +213,15 @@ Description: "SELECT SNOMED CT code system values the position in which the indi
 * $sct#40199007 "Supine body position (finding)"
 * $sct#34106002 "Trendelenburg position (finding)"
 
-ValueSet: VitalSignsBodyHeight
-Id: observation-vitalsign-bodyheight
+ValueSet: BodyHeightObservation
+Id: body-height-observation
 Title: "Vital Signs - Body Height"
 Description: "This value set defines the set of LOINC codes considered to be appropriate for representing body height (including body length) vital sign measurements in Observation.code."
 * ^meta.lastUpdated = "2025-10-26T17:42:56.640+00:00"
 * ^meta.profile = "http://hl7.org/fhir/StructureDefinition/shareablevalueset"
 * ^extension.url = "http://hl7.org/fhir/StructureDefinition/structuredefinition-wg"
 * ^extension.valueCode = #oo
-//* ^url = "http://hl7.org/fhir/ValueSet/observation-vitalsign-bodyheight"
+* ^url = "https://hl7.lt/fhir/tx/ValueSet/body-height-observation"
 * ^version = "6.0.0"
 * ^status = #active
 * ^experimental = false
@@ -243,7 +244,7 @@ ValueSet: HeightLengthMeasurementMethod
 Id: height-length-measurement-method
 Title: "Height Length Measurement Method value set"
 Description: "SELECT SNOMED CT code system values that describe how the height/length was measured."
-//* ^url = "http://hl7.org/fhir/us/vitals/ValueSet/heightLengthMeasMethodVS"
+* ^url = "http://hl7.tx/fhir/ValueSet/height-length-measurement-method"
 * ^version = "1.0.0"
 * ^status = #active
 * ^experimental = false
@@ -263,10 +264,10 @@ Description: "SELECT SNOMED CT code system values that describe how the height/l
 
 
 ValueSet: HeightLengthMeasurementDevice
-Id: height-length-meas-device
+Id: height-length-measurement-device
 Title: "Height Length Measurement Device value set"
 Description: "SELECT SNOMED CT code system values that describe the instrument used to measure the body height/length."
-//* ^url = "http://hl7.org/fhir/us/vitals/ValueSet/heightLengthMeasDeviceVS"
+* ^url = "https://hl7.lt/fhir/tx/ValueSet/height-length-measurement-device"
 * ^version = "1.0.0"
 * ^status = #active
 * ^experimental = false
@@ -288,7 +289,7 @@ ValueSet: WeightMeasurementDevice
 Id: weight-measurement-device
 Title: "Weight Measurement Device value set"
 Description: "SELECT SNOMED CT code system values that descibe the instrument used to measure the body weight."
-//* ^url = "http://hl7.org/fhir/us/vitals/ValueSet/weightMeasurementDeviceVS"
+* ^url = "https://hl7.lt/fhir/tx/ValueSet/weight-measurement-device"
 * ^version = "1.0.0"
 * ^status = #active
 * ^experimental = false
@@ -316,7 +317,7 @@ ValueSet: BodyWeightAssociatedSituation
 Id: body-weight-associated-situation
 Title: "Body Weight Associated Situation value set"
 Description: "SELECT SNOMED CT code system values and temporary code system values that describe situations to be considered when interpreting measured values."
-//* ^url = "http://hl7.org/fhir/us/vitals/ValueSet/BodyWeightAssociatedSituationVS"
+* ^url = "https://hl7.lt/fhir/tx/ValueSet/body-weight-associated-situation"
 * ^version = "1.0.0"
 * ^status = #active
 * ^experimental = false
@@ -337,15 +338,15 @@ Description: "SELECT SNOMED CT code system values and temporary code system valu
 * SolorTemporaryCodeSystem#971000205103 "Wearing street clothes with shoes (finding)"
 
 
-ValueSet: VitalSignsBodyWeight
-Id: vitalsign-bodyweight
-Title: "Vital Signs - Body Weight"
+ValueSet: BodyWeightObservation
+Id: body-weight-observation
+Title: "Body Weight observation codes"
 Description: "This value set defines the set of LOINC codes considered to be appropriate for representing body weight vital sign measurements in Observation.code."
 * ^meta.lastUpdated = "2025-10-26T17:42:56.640+00:00"
 * ^meta.profile = "http://hl7.org/fhir/StructureDefinition/shareablevalueset"
 * ^extension.url = "http://hl7.org/fhir/StructureDefinition/structuredefinition-wg"
 * ^extension.valueCode = #oo
-//* ^url = "http://hl7.org/fhir/ValueSet/observation-vitalsign-bodyweight"
+* ^url = "https://hl7.lt/fhir/tx/ValueSet/body-weight-observation"
 * ^version = "6.0.0"
 * ^status = #active
 * ^experimental = false
@@ -362,11 +363,11 @@ Description: "This value set defines the set of LOINC codes considered to be app
     SCALE_TYP = "LP7753-9"
 
 
-ValueSet: HeartRateMeasurementDeviceVS
-Id: heart-rate-meas-device
+ValueSet: HeartRateMeasurementDevice
+Id: heart-rate-measurement-device
 Title: "Heart Rate Measurement Device value set"
 Description: "SELECT SNOMED CT code system values that describe the instrument used to measure the heart rate."
-//* ^url = "http://hl7.org/fhir/us/vitals/ValueSet/heartRateMeasDeviceVS"
+* ^url = "https://hl7.lt/fhir/tx/ValueSet/heart-rate-measurement-device"
 * ^version = "1.0.0"
 * ^status = #active
 * ^experimental = false
@@ -392,11 +393,11 @@ Description: "SELECT SNOMED CT code system values that describe the instrument u
 * $sct#774007007 "Wearable neonatal heart rate meter (physical object)"
 
 
-ValueSet: HeartRateMeasurementBodyLocationPrecoordinated
-Id: heart-rate-meas-body-location-precoordinated
-Title: "Heart Rate Measurement Body Location Precoordinated value set"
+ValueSet: HeartRateMeasurementBodyLocation
+Id: heart-rate-measurement-body-location
+Title: "Heart Rate Measurement Body Location value set"
 Description: "SELECT SNOMED CT code system values that describe where on the body the heart rate was measured."
-//* ^url = "http://hl7.org/fhir/us/vitals/ValueSet/heartRateMeasBodyLocationPrecoordVS"
+* ^url = "https://hl7.lt/fhir/tx/ValueSet/heart-rate-measurement-body-location"
 * ^version = "1.0.0"
 * ^status = #active
 * ^experimental = false
@@ -445,7 +446,7 @@ ValueSet: HeartRateMeasurementMethod
 Id: heart-rate-measurement-method
 Title: "Heart Rate Measurement Method value set"
 Description: "SELECT SNOMED CT code system values that describe how the heart rate was measured."
-//* ^url = "http://hl7.org/fhir/us/vitals/ValueSet/heartRateMeasMethodVS"
+* ^url = "https://hl7.lt/fhir/tx/ValueSet/heart-rate-measurement-method"
 * ^version = "1.0.0"
 * ^status = #active
 * ^experimental = false
@@ -469,15 +470,15 @@ Description: "SELECT SNOMED CT code system values that describe how the heart ra
 * SolorTemporaryCodeSystem#641000205104 "Auscultation - automatic (procedure)"
 
 
-ValueSet: VitalSignsHeartRate
-Id: vitalsign-heartrate
-Title: "Vital Signs - Heart Rate"
+ValueSet: HeartRateObservation
+Id: heart-rate-observation
+Title: "Heart Rate observation codes"
 Description: "This value set defines the set of LOINC codes considered to be appropriate for representing heart rate vital sign measurements in Observation.code."
 * ^meta.lastUpdated = "2025-10-26T17:42:56.640+00:00"
 * ^meta.profile = "http://hl7.org/fhir/StructureDefinition/shareablevalueset"
 * ^extension.url = "http://hl7.org/fhir/StructureDefinition/structuredefinition-wg"
 * ^extension.valueCode = #oo
-//* ^url = "http://hl7.org/fhir/ValueSet/observation-vitalsign-heartrate"
+* ^url = "http://hl7.lt/fhir/tx/ValueSet/heart-rate-observation"
 * ^version = "6.0.0"
 * ^status = #active
 * ^experimental = false
@@ -494,33 +495,31 @@ Description: "This value set defines the set of LOINC codes considered to be app
 * exclude codes from system $loinc where SYSTEM = "LP310004-9"
 
 
-ValueSet: VitalSignsPanel
-Id: vitalsign-panel
-Title: "Vital Signs - Panel"
-Description: "This value set defines the set of LOINC codes considered to be appropriate for representing a panel of vital sign measurements in Observation.code."
-* ^meta.lastUpdated = "2025-10-26T17:42:56.640+00:00"
-* ^meta.profile = "http://hl7.org/fhir/StructureDefinition/shareablevalueset"
-* ^extension.url = "http://hl7.org/fhir/StructureDefinition/structuredefinition-wg"
-* ^extension.valueCode = #oo
-// * ^url = "http://hl7.org/fhir/ValueSet/observation-vitalsign-panel"
-* ^version = "6.0.0"
-* ^status = #active
-* ^experimental = false
-* ^publisher = "FHIR project team"
-* ^contact.telecom.system = #url
-* ^contact.telecom.value = "http://hl7.org/fhir"
-* ^jurisdiction = $m49.htm#001 "World"
-* ^copyright = "This content from LOINC® is copyright © 1995 Regenstrief Institute, Inc. and the LOINC Committee, and available at no cost under the license at http://loinc.org/terms-of-use"
-* include codes from system $loinc
-    where CLASS = "LP31904-3" and
-    TIME_ASPCT = "LP6960-1" and
-    SYSTEM = "LP310005-6"
+// ValueSet: VitalSignsPanelXXX
+// Id: vitalsign-panel
+// Title: "Vital Signs - Panel"
+// Description: "This value set defines the set of LOINC codes considered to be appropriate for representing a panel of vital sign measurements in Observation.code."
+// * ^meta.lastUpdated = "2025-10-26T17:42:56.640+00:00"
+// * ^meta.profile = "http://hl7.org/fhir/StructureDefinition/shareablevalueset"
+// * ^extension.url = "http://hl7.org/fhir/StructureDefinition/structuredefinition-wg"
+// * ^extension.valueCode = #oo
+// // * ^url = "http://hl7.org/fhir/ValueSet/observation-vitalsign-panel"
+// * ^version = "6.0.0"
+// * ^status = #active
+// * ^experimental = false
+// * ^publisher = "FHIR project team"
+// * ^contact.telecom.system = #url
+// * ^contact.telecom.value = "http://hl7.org/fhir"
+// * ^jurisdiction = $m49.htm#001 "World"
+// * ^copyright = "This content from LOINC® is copyright © 1995 Regenstrief Institute, Inc. and the LOINC Committee, and available at no cost under the license at http://loinc.org/terms-of-use"
+// * include codes from system $loinc
+//     where CLASS = "LP31904-3" and
+//     TIME_ASPCT = "LP6960-1" and
+//     SYSTEM = "LP310005-6"
 
 
-Alias: $m49.htm = http://unstats.un.org/unsd/methods/m49/m49.htm
-
-ValueSet: VitalSignsRateUnits
-Id: ucum-vitalsigns-rate
+ValueSet: VitalSignsRateUnit
+Id: vitalsigns-rate-unit
 Title: "Vital Signs Rate Units"
 Description: "UCUM rate units for recording vital signs including heart and respiratory rate."
 * ^meta.lastUpdated = "2025-10-26T17:42:56.640+00:00"
@@ -529,7 +528,7 @@ Description: "UCUM rate units for recording vital signs including heart and resp
 * ^extension[=].valueBoolean = true
 * ^extension[+].url = "http://hl7.org/fhir/StructureDefinition/structuredefinition-wg"
 * ^extension[=].valueCode = #oo
-//* ^url = "http://hl7.org/fhir/ValueSet/ucum-vitalsignsrate"
+* ^url = "https://hl7.lt/fhir/tx/ValueSet/vitalsigns-rate-unit"
 * ^version = "6.0.0-ballot3"
 * ^status = #active
 * ^experimental = false
@@ -543,7 +542,7 @@ ValueSet: MeasurementSetting
 Id: measurement-setting
 Title: "Measurement Setting value set"
 Description: "SELECT SNOMED CT code system values that contains terms that indicate the surroundings the individual was in during the measurement (i.e. home, clinic, hospital, etc.)."
-//* ^url = "http://hl7.org/fhir/us/vitals/ValueSet/MeasSettingVS"
+* ^url = "https://hl7.lt/fhir/tx/ValueSet/measurement-setting"
 * ^version = "1.0.0"
 * ^status = #active
 * ^experimental = false
@@ -565,7 +564,7 @@ ValueSet: BloodPressureMeasurementDeviceType
 Id: bp-measurement-device-type
 Title: "Blood Pressure Measurement Device value set"
 Description: "SELECT SNOMED CT code system values that describe the isntrument used to measure the blood pressure."
-//* ^url = "http://hl7.org/fhir/us/vitals/ValueSet/bpMeasDeviceVS"
+* ^url = "https://hl7.lt/fhir/tx/ValueSet/bp-measurement-device-type"
 * ^version = "1.0.0"
 * ^status = #active
 * ^experimental = false
@@ -593,7 +592,7 @@ ValueSet: BloodPressureCuffSize
 Id: bp-cuff-size
 Title: "Blood Pressure Cuff Size value set"
 Description: "SELECT SNOMED CT code system values that describe the size of blood pressure cuff in use."
-//* ^url = "http://hl7.org/fhir/us/vitals/ValueSet/bpCuffSizeVS"
+* ^url = "https://hl7.lt/fhir/tx/ValueSet/bp-cuff-size"
 * ^version = "1.0.0"
 * ^status = #active
 * ^experimental = false
@@ -637,15 +636,15 @@ Description: "SELECT SNOMED CT code system values that describe how a blood pres
 * SolorTemporaryCodeSystem#911000205109 "Measurement of blood pressure using intravascular transducer (procedure)"
 * SolorTemporaryCodeSystem#641000205104 "Auscultation - automatic (procedure)"
 
-ValueSet: VitalSignsBPPanel
-Id: vitalsign-bppanel
-Title: "Vital Signs - BP Panel"
+ValueSet: BloodPressurePanelObservation
+Id: bp-panel-observation
+Title: "BP Panel observation codes"
 Description: "This value set defines the set of LOINC codes considered to be appropriate for representing an arterial szstolic and diastolic BP panel of vital signs measurements in Observation.component.code."
 * ^meta.lastUpdated = "2025-10-26T17:42:56.640+00:00"
 * ^meta.profile = "http://hl7.org/fhir/StructureDefinition/shareablevalueset"
 * ^extension.url = "http://hl7.org/fhir/StructureDefinition/structuredefinition-wg"
 * ^extension.valueCode = #oo
-//* ^url = "http://hl7.org/fhir/ValueSet/observation-vitalsign-bppanel"
+* ^url = "https://hl7.lt/fhir/tx/ValueSet/bp-panel-observation"
 * ^version = "6.0.0"
 * ^status = #active
 * ^experimental = false
@@ -659,16 +658,16 @@ Description: "This value set defines the set of LOINC codes considered to be app
 * $loinc#85354-9 "Blood pressure panel with all children optional"
 
 
-ValueSet: VitalSignsSystolicBP
-Id: vitalsign-systolicbp
-Title: "Vital Signs - Systolic BP"
+ValueSet: BloodPressureSystolicObservation
+Id: bp-systolic-observation
+Title: "Systolic BP observation codes"
 Description: "This value set defines the set of LOINC codes considered to be appropriate for representing an arterial systolic BP vital sign measurement in Observation.component.code."
 * ^meta.lastUpdated = "2025-10-26T17:42:56.640+00:00"
 * ^meta.profile = "http://hl7.org/fhir/StructureDefinition/shareablevalueset"
 * ^extension.url = "http://hl7.org/fhir/StructureDefinition/structuredefinition-wg"
 * ^extension.valueCode = #oo
-//* ^url = "http://hl7.org/fhir/ValueSet/observation-vitalsign-systolicbp"
-* ^version = "6.0.0-ballot3"
+* ^url = "https://hl7.lt/fhir/tx/ValueSet/bp-systolic-observation"
+* ^version = "6.0.0"
 * ^status = #active
 * ^experimental = false
 * ^publisher = "FHIR project team"
@@ -683,16 +682,16 @@ Description: "This value set defines the set of LOINC codes considered to be app
     SYSTEM = "LP7034-4" and
     SCALE_TYP = "LP7753-9"
 
-ValueSet: VitalSignsDiastolicBP
-Id: vitalsign-diastolicbp
-Title: "Vital Signs - Diastolic BP"
+ValueSet: BloodPressureDiastolicObservation
+Id: bp-diastolic-observation
+Title: "Diastolic BP observation codes"
 Description: "This value set defines the set of LOINC codes considered to be appropriate for representing an arterial diastolic BP vital sign measurement in Observation.component.code."
 * ^meta.lastUpdated = "2025-10-26T17:42:56.640+00:00"
 * ^meta.profile = "http://hl7.org/fhir/StructureDefinition/shareablevalueset"
 * ^extension.url = "http://hl7.org/fhir/StructureDefinition/structuredefinition-wg"
 * ^extension.valueCode = #oo
-//* ^url = "http://hl7.org/fhir/ValueSet/observation-vitalsign-diastolicbp"
-* ^version = "6.0.0-ballot3"
+* ^url = "https://hl7.lt/fhir/tx/ValueSet/bp-diastolic-observation"
+* ^version = "6.0.0"
 * ^status = #active
 * ^experimental = false
 * ^publisher = "FHIR project team"
@@ -707,8 +706,8 @@ Description: "This value set defines the set of LOINC codes considered to be app
     SYSTEM = "LP7034-4" and
     SCALE_TYP = "LP7753-9"
 
-ValueSet: BloodPressureUnits
-Id: ucum-bp
+ValueSet: BloodPressureUnit
+Id: bp-unit
 Title: "Blood Pressure Units"
 Description: "UCUM units for recording blood pressure."
 * ^meta.lastUpdated = "2025-10-26T17:42:56.640+00:00"
@@ -717,7 +716,7 @@ Description: "UCUM units for recording blood pressure."
 * ^extension[=].valueBoolean = true
 * ^extension[+].url = "http://hl7.org/fhir/StructureDefinition/structuredefinition-wg"
 * ^extension[=].valueCode = #oo
-//* ^url = "http://hl7.org/fhir/ValueSet/ucum-bp"
+* ^url = "https://hl7.lt/fhir/tx/ValueSet/bp-unit"
 * ^version = "6.0.0"
 * ^status = #active
 * ^experimental = false
@@ -727,11 +726,11 @@ Description: "UCUM units for recording blood pressure."
 * $ucum#mm[Hg] "millimeter of mercury"
 
 
-ValueSet: BloodPressureMeasurementBodyLocationPrecoordinated
-Id: bp-measurement-body-location-precoordinated
-Title: "Blood Pressure Measurement Body Location Precoordinated value set"
+ValueSet: BloodPressureMeasurementBodyLocation
+Id: bp-measurement-body-location
+Title: "Blood Pressure Measurement Body Location"
 Description: "SELECT SNOMED CT code system values that describe the location on the body where the blood pressure was measured."
-//* ^url = "http://hl7.org/fhir/us/vitals/ValueSet/bpmeasbodylocationprecoord"
+* ^url = "https://hl7.lt/fhir/tx/ValueSet/bp-measurement-body-location"
 * ^version = "2.0.0"
 * ^status = #draft
 * ^experimental = false
