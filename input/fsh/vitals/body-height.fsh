@@ -72,7 +72,6 @@ Description: "The measurement in centimeters or feet and inches from the top of 
 * device only Reference(BodyHeightMeasurementDevice)
 * device MS
 * device ^short = "Body Height Measurement Device"
-* bodyStructure only Reference(BodyStructureVitalSigns)
 * bodyStructure MS
 * bodyStructure ^short = "Describe body characteristics where on/in body an observation or procedure took place"
 

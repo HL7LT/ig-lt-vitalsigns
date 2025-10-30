@@ -78,7 +78,7 @@ Description: "The number of heart beats in a minute."
 * device only Reference(HeartRateMeasurementDevice)
 * device MS
 * device ^short = "Heart Rate Measurement Device"
-* bodyStructure only Reference(BodyStructureVitalSigns)
+* bodyStructure only Reference(BodyStructureBloodPressure)
 * bodyStructure MS
 * bodyStructure ^short = "Describe body characteristics where on/in body an observation or procedure took place"
 * bodySite ..0
@@ -124,7 +124,7 @@ Description: "Example observation representing the patient's heart rate measured
 * extension[sleepStatus].valueCodeableConcept = $sct#248220008 "Asleep (finding)"
 * interpretation = $observation-interpretation#N "Normal"
 * device = Reference(example-heart-rate-device)
-* bodyStructure = Reference(example-body-structure-vitals)
+* bodyStructure = Reference(example-body-structure-blood-pressure)
 * note.text = "Measured manually while patient was seated and relaxed."
 
 Instance: example-heart-rate-device

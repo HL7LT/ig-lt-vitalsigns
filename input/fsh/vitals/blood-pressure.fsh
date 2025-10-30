@@ -185,7 +185,7 @@ Description: "Blood Pressure Panel; a grouping of systolic, diastolic, and mean 
 * device only Reference(BloodPressureMeasurementDevice)
 * device MS
 * device ^short = "Blood Pressure Device"
-* bodyStructure only Reference(BodyStructureVitalSigns)
+* bodyStructure only Reference(BodyStructureBloodPressure)
 * bodyStructure MS
 * bodyStructure ^short = "Describe body characteristics where on/in body an observation or procedure took place"
 * bodySite ..0
