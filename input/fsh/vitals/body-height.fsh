@@ -94,7 +94,7 @@ Description: "For single vital signs observations (that do not require use of co
 Instance: example-body-height
 InstanceOf: BodyHeight
 Usage: #example
-Title: "Example Body Height Measurement"
+Title: "Example Body Height Observation"
 Description: "Example observation representing the patient's body height measured in centimeters."
 * status = #final
 * category[VSCat] = $observation-category#vital-signs "Vital Signs"

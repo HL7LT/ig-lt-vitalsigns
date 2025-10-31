@@ -98,7 +98,7 @@ Description: "For single vital signs observations (that do not require use of co
 Instance: example-body-weight
 InstanceOf: BodyWeight
 Usage: #example
-Title: "Example Body Weight Measurement"
+Title: "Example Body Weight Observation"
 Description: "Example observation representing the patient's body weight measured in kilograms."
 * status = #final
 * category[VSCat] = $observation-category#vital-signs "Vital Signs"

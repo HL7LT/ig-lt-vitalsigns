@@ -54,7 +54,7 @@ Description: "Head Occipital-frontal circumference by Tape measure. The measurem
 Instance: example-head-circumference
 InstanceOf: HeadCircumference
 Usage: #example
-Title: "Example Head Circumference Measurement"
+Title: "Example Head Circumference Observation"
 Description: "Measured head circumference using a tape measure."
 * status = #final
 * category[VSCat] = $observation-category#vital-signs "Vital Signs"

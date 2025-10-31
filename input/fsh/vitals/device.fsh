@@ -22,7 +22,7 @@ Description: "Device used to measure blood pressure."
 
 Instance: example-device-blood-pressure
 InstanceOf: DeviceBloodPressure
-Title: "Example Blood Pressure Measurement Device"
+Title: "Example Device - Blood Pressure Measurement"
 Description: "Automated digital blood pressure monitor with adult cuff."
 Usage: #example
 
@@ -52,7 +52,7 @@ Description: "Device used to measure body height."
 Instance: example-device-body-height
 InstanceOf: DeviceBodyHeight
 Usage: #example
-Title: "Example Body Height Measurement Device"
+Title: "Example Device - Body Height Measurement"
 Description: "A stadiometer used to measure the patient’s height."
 * status = #active
 * type = $sct#24311000205101 "Stadiometer (physical object)"
@@ -74,7 +74,7 @@ Description: "Device used to measure body weight."
 Instance: example-device-body-weight
 InstanceOf: DeviceBodyWeight
 Usage: #example
-Title: "Example Body Weight Measurement Device"
+Title: "Example Device - Body Weight Measurement"
 Description: "A weighing scale used to measure the patient's body weight."
 * status = #active
 * type.text = "Weighing scale"
@@ -97,7 +97,7 @@ Description: "Device used to measure heart rate."
 Instance: example-device-heart-rate
 InstanceOf: DeviceHeartRate
 Usage: #example
-Title: "Example Heart Rate Measurement Device"
+Title: "Example Device - Heart Rate Measurement"
 Description: "An automated digital heart rate monitor used for the measurement."
 * status = #active
 * type.text = "Digital heart rate monitor"

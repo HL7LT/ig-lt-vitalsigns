@@ -59,6 +59,8 @@ Description: "Waist circumference by Tape measure. The measurement in centimeter
 
 Instance: example-waist-circumference
 InstanceOf: WaistCircumference
+Title: "Example Waist Circumference Observation"
+Description: "Measured waist circumference using a tape measure."
 Usage: #example
 * status = #final
 * category[VSCat] = $observation-category#vital-signs "Vital Signs"

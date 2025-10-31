@@ -101,7 +101,7 @@ Description: "If there is no component or hasMember element then either a value[
 Instance: example-heart-rate
 InstanceOf: HeartRate
 Usage: #example
-Title: "Example Heart Rate Measurement"
+Title: "Example Heart Rate Observation"
 Description: "Example observation representing the patient's heart rate measured at rest."
 * status = #final
 * category[VSCat] = $observation-category#vital-signs "Vital Signs"

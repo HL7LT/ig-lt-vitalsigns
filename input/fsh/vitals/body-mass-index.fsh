@@ -54,6 +54,8 @@ Description: "Body Mass Index (BMI) is a measure of body fat based on height and
 
 Instance: example-bmi
 InstanceOf: BMI
+Title: "Example Body Mass Index Observation"
+Description: "An example BMI measurement for a patient."
 Usage: #example
 * status = #final
 * category[VSCat] = $observation-category#vital-signs "Vital Signs"
