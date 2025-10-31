@@ -26,3 +26,5 @@ Context: Observation, Specimen.collection
 * . ^definition = "The position of the body when the observation was done, e.g. standing, sitting. To be used only when the body position in not precoordinated in the observation code."
 * value[x] 1..
 * value[x] only CodeableConcept
+* valueCodeableConcept from VitalSignsBodyPosition (extensible)
+* valueCodeableConcept ^sliceName = "valueCodeableConcept"

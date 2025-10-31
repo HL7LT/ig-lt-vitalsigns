@@ -26,6 +26,6 @@ Description: "The location or setting the subject was in when the measurement wa
 * . ^definition = "The location or setting the subject was in when the measurement was obtained. For example, home, clinic, hospital. etc."
 * valueCodeableConcept 0..1
 * valueCodeableConcept only CodeableConcept
-* valueCodeableConcept from MeasurementSetting (extensible)
+* valueCodeableConcept from MeasurementEnvironment (extensible)
 * valueCodeableConcept ^sliceName = "valueCodeableConcept"
 

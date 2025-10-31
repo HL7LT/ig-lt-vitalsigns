@@ -75,7 +75,7 @@ Description: "The number of heart beats in a minute."
 //>> End of the CIMI specification
 
 * component 0..0
-* device only Reference(HeartRateMeasurementDevice)
+* device only Reference(DeviceHeartRate)
 * device MS
 * device ^short = "Heart Rate Measurement Device"
 * bodyStructure only Reference(BodyStructureBloodPressure)
@@ -83,12 +83,6 @@ Description: "The number of heart beats in a minute."
 * bodyStructure ^short = "Describe body characteristics where on/in body an observation or procedure took place"
 * bodySite ..0
 
-Profile: HeartRateMeasurementDevice
-Parent: Device
-Id: device-heart-rate
-Title: "Heart Rate Measurement Device"
-
-* type from HeartRateMeasurementDevice (extensible)
 
 
 
@@ -123,14 +117,7 @@ Description: "Example observation representing the patient's heart rate measured
 * extension[exerciseAssociation].valueCodeableConcept = $sct#229065009 "Exercise therapy (regime/therapy)"
 * extension[sleepStatus].valueCodeableConcept = $sct#248220008 "Asleep (finding)"
 * interpretation = $observation-interpretation#N "Normal"
-* device = Reference(example-heart-rate-device)
+* device = Reference(example-device-heart-rate)
 * bodyStructure = Reference(example-body-structure-blood-pressure)
 * note.text = "Measured manually while patient was seated and relaxed."
 
-Instance: example-heart-rate-device
-InstanceOf: HeartRateMeasurementDevice
-Usage: #example
-Title: "Example Heart Rate Measurement Device"
-Description: "An automated digital heart rate monitor used for the measurement."
-* status = #active
-* type.text = "Digital heart rate monitor"

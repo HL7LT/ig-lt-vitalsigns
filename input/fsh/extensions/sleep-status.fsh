@@ -27,7 +27,7 @@ Description: "The state of wakefulness during the measurement."
 * . ^definition = "The state of wakefulness during the measurement."
 * valueCodeableConcept 0..1
 * valueCodeableConcept only CodeableConcept
-* valueCodeableConcept from SleepStatus (extensible)
+* valueCodeableConcept from VitalSignsSleepStatus (extensible)
 * valueCodeableConcept ^sliceName = "valueCodeableConcept"
 
 

@@ -75,17 +75,11 @@ Description: "The measured mass of an individual's body."
 * component 0..0
 * bodyStructure ..0
 * bodySite ..0
-* device only Reference(BodyWeightMeasurementDevice)
+* device only Reference(DeviceBodyWeight)
 * device MS
 * device ^short = "Body Weight Measurement Device"
 
 
-Profile: BodyWeightMeasurementDevice
-Parent: Device
-Id: device-body-weight
-Title: "Body Weight Measurement Device"
-
-* type from WeightMeasurementDevice (extensible)
 
 
 Invariant: vs-bw-1
@@ -99,13 +93,6 @@ Description: "For single vital signs observations (that do not require use of co
 * expression = "dataAbsentReason.exists() or value.exists()"
 // * source = "http://hl7.org/fhir/StructureDefinition/vitalsigns"
 
-Instance: example-body-weight-device
-InstanceOf: BodyWeightMeasurementDevice
-Usage: #example
-Title: "Example Body Weight Measurement Device"
-Description: "A weighing scale used to measure the patient's body weight."
-* status = #active
-* type.text = "Weighing scale"
 
 // Example: Body Weight
 Instance: example-body-weight
@@ -125,6 +112,6 @@ Description: "Example observation representing the patient's body weight measure
 * valueQuantity.code = #kg
 * method = $sct#39857003 "Weighing patient (procedure)"
 * extension[associatedSituation].valueCodeableConcept = $sct#225494003 "Wears undignified clothing (finding)"
-* device = Reference(example-body-weight-device)
+* device = Reference(example-device-body-weight)
 * note.text = "Measured after breakfast using a calibrated digital scale."
 

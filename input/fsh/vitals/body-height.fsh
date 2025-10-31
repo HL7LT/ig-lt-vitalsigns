@@ -69,19 +69,12 @@ Description: "The measurement in centimeters or feet and inches from the top of 
 
 * component 0..0
 * bodySite ..0
-* device only Reference(BodyHeightMeasurementDevice)
+* device only Reference(DeviceBodyHeight)
 * device MS
 * device ^short = "Body Height Measurement Device"
 * bodyStructure MS
 * bodyStructure ^short = "Describe body characteristics where on/in body an observation or procedure took place"
 
-
-Profile: BodyHeightMeasurementDevice
-Parent: Device
-Id: device-body-height
-Title: "Body Height Measurement Device"
-
-* type from HeightLengthMeasurementDevice (extensible)
 
 
 Invariant: vs-bh-1
@@ -97,13 +90,6 @@ Description: "For single vital signs observations (that do not require use of co
 
 
 
-Instance: example-body-height-device
-InstanceOf: BodyHeightMeasurementDevice
-Usage: #example
-Title: "Example Body Height Measurement Device"
-Description: "A stadiometer used to measure the patient’s height."
-* status = #active
-* type = $sct#24311000205101 "Stadiometer (physical object)"
 
 Instance: example-body-height
 InstanceOf: BodyHeight
@@ -121,7 +107,7 @@ Description: "Example observation representing the patient's body height measure
 * valueQuantity.system = "http://unitsofmeasure.org"
 * valueQuantity.code = #cm
 * method.text = "Measured using a stadiometer"
-* device = Reference(example-body-height-device)
+* device = Reference(example-device-body-height)
 * note.text = "Height measured without shoes during routine examination."
 
 

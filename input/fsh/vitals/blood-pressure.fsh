@@ -133,12 +133,11 @@ Description: "Blood Pressure Panel; a grouping of systolic, diastolic, and mean 
 
 //>> Begin of the CIMI specification
 * extension contains
-    //bodyPosition named bodyPosition 0..1 MS and
+//    BodyPosition named bodyPosition 0..1 MS and  // because of the usage of BodyPositionVitalSigns in BodyStructureBloodPressure
     SleepStatus named sleepStatus 0..1 MS and
     ExerciseAssociation named exerciseAssociation 0..1 MS and
     MeasurementSetting named measurementSetting 0..1 MS 
 //* extension[bodyPosition] ^short = "Body Position"
-//* extension[bodyPosition].value[x] from BodyPosition (extensible)
 * extension[sleepStatus] ^short = "Sleep Status"
 * extension[exerciseAssociation] ^short = "Exercise Association"
 * extension[measurementSetting] ^short = "Measurement setting"
@@ -182,7 +181,7 @@ Description: "Blood Pressure Panel; a grouping of systolic, diastolic, and mean 
 //>> End of the CIMI specification
 
 //>>> Start of custom things
-* device only Reference(BloodPressureMeasurementDevice)
+* device only Reference(DeviceBloodPressure)
 * device MS
 * device ^short = "Blood Pressure Device"
 * bodyStructure only Reference(BodyStructureBloodPressure)
@@ -190,23 +189,6 @@ Description: "Blood Pressure Panel; a grouping of systolic, diastolic, and mean 
 * bodyStructure ^short = "Describe body characteristics where on/in body an observation or procedure took place"
 * bodySite ..0
 
-Profile: BloodPressureMeasurementDevice
-Parent: Device
-Id: device-blood-pressure
-Title: "Blood Pressure Measurement Device"
-
-* type from BloodPressureMeasurementDeviceType (extensible)
-* property ^slicing.discriminator.type = #value
-// * property ^slicing.discriminator.path = "$this"
-* property ^slicing.discriminator.path = "type"
-* property ^slicing.rules = #open
-* property contains BPCuffSize 0..1 MS
-* property[BPCuffSize] ^short = "Cuff Size"
-* property[BPCuffSize].type MS
-* property[BPCuffSize].type = urn:iso:std:iso:11073:10101#528391 (exactly)
-* property[BPCuffSize].value[x] only CodeableConcept
-* property[BPCuffSize].valueCodeableConcept MS
-* property[BPCuffSize].valueCodeableConcept from BloodPressureCuffSize (extensible)
 
 
 //<<<
@@ -241,7 +223,7 @@ Usage: #example
 * subject = Reference(example-patient)
 * effectiveDateTime = "2025-08-01T10:00:00Z"
 * interpretation = $observation-interpretation#N "Normal"
-* device = Reference(example-blood-pressure-device)
+* device = Reference(example-device-blood-pressure)
 * note.text = "Patient was seated for 5 minutes before measurement."
 
 // Systolic BP component 
@@ -270,14 +252,3 @@ Usage: #example
 * component[MeanArterialBP].valueQuantity.code = #mm[Hg]
 
 
-Instance: example-blood-pressure-device
-InstanceOf: BloodPressureMeasurementDevice
-Title: "Example Blood Pressure Measurement Device"
-Description: "Automated digital blood pressure monitor with adult cuff."
-Usage: #example
-
-* status = #active
-* type = $sct#258057004 "Non-invasive blood pressure monitor (physical object)"
-* manufacturer = "Omron Healthcare"
-* property[BPCuffSize].type = urn:iso:std:iso:11073:10101#528391
-* property[BPCuffSize].valueCodeableConcept = $sct#720737000 "Blood pressure cuff, adult size (physical object)"
