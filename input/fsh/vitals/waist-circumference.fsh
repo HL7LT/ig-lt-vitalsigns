@@ -1,3 +1,15 @@
+ValueSet: LTAbdominalObesityVS
+Id: lt-abdominal-obesity
+Title: "Abdominal Obesity Interpretation"
+Description: "Interpretation whether abdominal (android) obesity is present."
+* ^status = #active
+* ^experimental = false
+* ^language = #en
+* ^publisher = "HL7 Lithuania"
+* $sct#373067005 "No (qualifier value)"
+* $sct#238132000 "Android obesity (disorder)"
+
+
 Profile: WaistCircumference
 Parent: LTBaseObservation
 Id: waist-circumference
@@ -51,21 +63,58 @@ Description: "Waist circumference by Tape measure. The measurement in centimeter
 
 * interpretation from NumericResultInterpretationNonPanic (extensible)
 
-* component 0..0
+
+// Add abdominal obesity interpretation component
+* component ^slicing.discriminator.type = #pattern
+* component ^slicing.discriminator.path = "code"
+* component ^slicing.rules = #open
+* component contains ObesityInterpretation 0..1
+// Slice: Abdominal Obesity Interpretation
+* component[ObesityInterpretation].code = $sct#276361009 "Waist circumference (observable entity)"
+* component[ObesityInterpretation].value[x] only CodeableConcept
+* component[ObesityInterpretation].valueCodeableConcept from LTAbdominalObesityVS (required)
+* component[ObesityInterpretation] ^short = "Indicates presence or absence of abdominal (android) obesity"
+
+* component 0..*
 * bodyStructure ..0
 * bodySite ..0
 * method 0..0
 
 
+
+
+
 Instance: example-waist-circumference
 InstanceOf: WaistCircumference
-Title: "Example Waist Circumference Observation"
-Description: "Measured waist circumference using a tape measure."
 Usage: #example
 * status = #final
-* category[VSCat] = $observation-category#vital-signs "Vital Signs"
-* category[WaistCircumferenceCode] = $loinc#8280-0 "Waist Circumference at umbilicus by Tape measure"
 * code = $sct#276361009 "Waist circumference (observable entity)"
 * subject = Reference(example-patient)
 * effectiveDateTime = "2019-10-16T12:12:29-09:00"
 * valueQuantity = 90 $ucum#cm "cm"
+
+
+Instance: example-waist-circumference-obesity
+InstanceOf: WaistCircumference
+Title: "Example – Abdominal Obesity Present"
+Usage: #example
+* status = #final
+* code = $sct#276361009
+* subject = Reference(example-patient)
+* effectiveDateTime = "2024-01-10T09:00:00Z"
+* valueQuantity = 104 $ucum#cm "cm"
+* component[ObesityInterpretation].valueCodeableConcept = $sct#238132000 "Android obesity (disorder)"
+
+
+Instance: example-waist-circumference-no-obesity
+InstanceOf: WaistCircumference
+Title: "Example – No Abdominal Obesity"
+Usage: #example
+* status = #final
+* code = $sct#276361009
+* subject = Reference(example-patient)
+* effectiveDateTime = "2024-01-10T09:00:00Z"
+* valueQuantity = 78 $ucum#cm "cm"
+* component[ObesityInterpretation].valueCodeableConcept = $sct#373067005 "No (qualifier value)"
+
+
