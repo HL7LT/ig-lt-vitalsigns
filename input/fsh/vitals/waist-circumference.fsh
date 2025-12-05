@@ -49,7 +49,14 @@ Description: "Waist circumference by Tape measure. The measurement in centimeter
 
 * dataAbsentReason ^condition = "vs-bw-2"
 
-* interpretation from NumericResultInterpretationNonPanic (extensible)
+* interpretation ^slicing.discriminator.type = #pattern
+* interpretation ^slicing.discriminator.path = "$this"
+* interpretation ^slicing.rules = #open
+* interpretation contains Numeric 1..1 MS and Disease 0..1 MS
+* interpretation[Numeric] from NumericResultInterpretation 
+* interpretation[Numeric] ^definition = "This value set defines the set of possible interpretations for waist circumference results."
+* interpretation[Disease] from WaistCircumferenceResultInterpretation 
+* interpretation[Disease] ^definition = "This value set defines the set of possible diseases hypothesis based on the interpretation of waist circumference results."
 
 * component 0..0
 * bodyStructure ..0
@@ -68,4 +75,7 @@ Usage: #example
 * code = $sct#276361009 "Waist circumference (observable entity)"
 * subject = Reference(example-patient)
 * effectiveDateTime = "2019-10-16T12:12:29-09:00"
-* valueQuantity = 90 $ucum#cm "cm"
+* valueQuantity = 130 $ucum#cm "cm"
+* interpretation[Numeric] = $observation-interpretation#HH "Panic High"
+* interpretation[Disease] = $sct#249533007 "Obese abdomen (finding)"
+
