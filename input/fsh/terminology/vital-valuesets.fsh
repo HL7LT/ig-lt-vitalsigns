@@ -181,6 +181,17 @@ Description: "The HL7 V3:ObservationInterpretation code set (OID: 2.16.840.1.113
 * $observation-interpretation#LL "Panic Low"
 * $observation-interpretation#N "Normal"
 
+ValueSet: WaistCircumferenceResultInterpretation
+Id: waist-circumference-result-interpretation
+Title: "WaistCircumference Result Interpretation value set"
+Description: " that describes interpretations associated with a measured value."
+// * ^url = "https://hl7.lt/fhir/tx/ValueSet/waist-circumference-result-interpretation"
+* ^version = "1.0.0"
+* ^status = #active
+* ^experimental = true
+
+* $sct#249533007 "Obese abdomen (finding)"
+
 
 ValueSet: VitalSignsBodyPosition
 Id: vital-signs-body-position
