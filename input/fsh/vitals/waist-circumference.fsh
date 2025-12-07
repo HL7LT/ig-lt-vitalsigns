@@ -52,9 +52,9 @@ Description: "Waist circumference by Tape measure. The measurement in centimeter
 * interpretation ^slicing.discriminator.type = #pattern
 * interpretation ^slicing.discriminator.path = "$this"
 * interpretation ^slicing.rules = #open
-* interpretation contains Numeric 1..1 MS and Disease 0..1 MS
-* interpretation[Numeric] from NumericResultInterpretation 
-* interpretation[Numeric] ^definition = "This value set defines the set of possible interpretations for waist circumference results."
+* interpretation contains Category 0..1 MS and Disease 0..1 MS
+* interpretation[Category] from NumericResultInterpretation 
+* interpretation[Category] ^definition = "This value set defines the set of possible interpretations for waist circumference measurement."
 * interpretation[Disease] from WaistCircumferenceResultInterpretation 
 * interpretation[Disease] ^definition = "This value set defines the set of possible diseases hypothesis based on the interpretation of waist circumference results."
 
@@ -76,6 +76,6 @@ Usage: #example
 * subject = Reference(example-patient)
 * effectiveDateTime = "2019-10-16T12:12:29-09:00"
 * valueQuantity = 130 $ucum#cm "cm"
-* interpretation[Numeric] = $observation-interpretation#HH "Panic High"
+* interpretation[Category] = $observation-interpretation#HH "Panic High"
 * interpretation[Disease] = $sct#249533007 "Obese abdomen (finding)"
 
