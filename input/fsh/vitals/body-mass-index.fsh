@@ -1,8 +1,9 @@
 Profile: BMI
-Parent: LTBaseObservation
+Parent: ObservationLt
 Id: bmi
 Title: "Body Mass Index"
 Description: "Body Mass Index (BMI) is a measure of body fat based on height and weight."
+* ^url = $bmi-url
 
 * ^version = "1.0.0"
 * ^status = #draft
@@ -52,14 +53,4 @@ Description: "Body Mass Index (BMI) is a measure of body fat based on height and
 * method 0..0
 
 
-Instance: example-bmi
-InstanceOf: BMI
-Title: "Example Body Mass Index Observation"
-Description: "An example BMI measurement for a patient."
-Usage: #example
-* status = #final
-* category[VSCat] = $observation-category#vital-signs "Vital Signs"
-* code = $loinc#39156-5 "Body mass index (BMI) [Ratio]"
-* subject = Reference(example-patient)
-* effectiveDateTime = "2019-10-16T12:12:29-09:00"
 * valueQuantity = 22 $ucum#kg/m2 "kilogram / (meter ^ 2)"

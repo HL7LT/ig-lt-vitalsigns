@@ -1,8 +1,9 @@
 Profile: BodyHeight
-Parent: LTBaseObservation
+Parent: ObservationLt
 Id: body-height
 Title: "Body Height"
 Description: "The measurement in centimeters or feet and inches from the top of the head to the heel, usually while standing."
+* ^url = $body-height-url
 * ^version = "1.0.0"
 * ^status = #draft
 * ^publisher = "Tallinn University of Technology (TalTech)"
@@ -88,27 +89,6 @@ Description: "For single vital signs observations (that do not require use of co
 * expression = "dataAbsentReason.exists() or value.exists()"
 // * source = "http://hl7.org/fhir/StructureDefinition/vitalsigns"
 
-
-
-
-Instance: example-body-height
-InstanceOf: BodyHeight
-Usage: #example
-Title: "Example Body Height Observation"
-Description: "Example observation representing the patient's body height measured in centimeters."
-* status = #final
-* category[VSCat] = $observation-category#vital-signs "Vital Signs"
-* category[BodyHeightCategory] = $loinc#8302-2 "Body height"
-* code = $loinc#8302-2 "Body height"
-* subject = Reference(example-patient)
-* effectiveDateTime = "2025-10-27T09:15:00+03:00"
-* valueQuantity.value = 176
-* valueQuantity.unit = "cm"
-* valueQuantity.system = "http://unitsofmeasure.org"
-* valueQuantity.code = #cm
-* method.text = "Measured using a stadiometer"
-* device = Reference(example-device-body-height)
-* note.text = "Height measured without shoes during routine examination."
 
 
 

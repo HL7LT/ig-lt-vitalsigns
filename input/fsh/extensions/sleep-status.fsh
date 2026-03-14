@@ -3,6 +3,7 @@ Extension: SleepStatus
 Id: sleep-status
 Title: "Sleep Status Extension"
 Description: "The state of wakefulness during the measurement."
+* ^url = $sleep-status-url
 * ^extension[0].url = "http://hl7.org/fhir/StructureDefinition/structuredefinition-wg"
 * ^extension[=].valueCode = #oo
 * ^extension[+].url = "http://hl7.org/fhir/StructureDefinition/structuredefinition-fmm"

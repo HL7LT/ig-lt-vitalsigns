@@ -1,8 +1,9 @@
 Profile: WaistCircumference
-Parent: LTBaseObservation
+Parent: ObservationLt
 Id: waist-circumference
 Title: "Waist Circumference"
 Description: "Waist circumference by Tape measure. The measurement in centimeters or inches around the narrowest part of the waist."
+* ^url = $waist-circumference-url
 
 * ^version = "1.0.0"
 * ^status = #draft
@@ -64,18 +65,4 @@ Description: "Waist circumference by Tape measure. The measurement in centimeter
 * method 0..0
 
 
-Instance: example-waist-circumference
-InstanceOf: WaistCircumference
-Title: "Example Waist Circumference Observation"
-Description: "Measured waist circumference using a tape measure."
-Usage: #example
-* status = #final
-* category[VSCat] = $observation-category#vital-signs "Vital Signs"
-* category[WaistCircumferenceCode] = $loinc#8280-0 "Waist Circumference at umbilicus by Tape measure"
-* code = $sct#276361009 "Waist circumference (observable entity)"
-* subject = Reference(example-patient)
-* effectiveDateTime = "2019-10-16T12:12:29-09:00"
-* valueQuantity = 130 $ucum#cm "cm"
-* interpretation[Category] = $observation-interpretation#HH "Panic High"
-* interpretation[Disease] = $sct#249533007 "Obese abdomen (finding)"
 
