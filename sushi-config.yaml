@@ -21,15 +21,9 @@ publisher:
   email: info@medicinosnk.lt
 
 dependencies:
-  lt.hl7.fhir.base: 0.2.0
   hl7.fhir.eu.base-r5: 0.1.0
-#  hl7.fhir.uv.ips.r5: 4.0.0  #FHIR IPS R5 base
-#   fhir.base.template: 0.8.1
-#   # while we don't strictly needs this, this helps resolve the DICOM supplement correctly until tx.fhir.org can do this
-#   fhir.dicom:
-#     id: fhir_dicom
-#     uri: http://fhir.org/packages/fhir.dicom/ImplementationGuide/fhir.dicom
-#     version: 2025.2.20250411
+  lt.hl7.fhir.base: dev #current
+
 
 # the following are for offline use only
 #  hl7.fhir.uv.tools.r5: 0.5.0
@@ -70,7 +64,38 @@ dependencies:
 
 parameters:
   special-url-base: https://hl7.lt/fhir
-  special-url: https://hl7.lt/fhir/tx
+  special-url: 
+    - https://tx.hl7.lt/fhir
+    - https://tx.hl7.lt/fhir/ValueSet/bp-cuff-size
+    - https://tx.hl7.lt/fhir/ValueSet/bp-diastolic-observation
+    - https://tx.hl7.lt/fhir/ValueSet/bp-measurement-body-location
+    - https://tx.hl7.lt/fhir/ValueSet/bp-measurement-method
+    - https://tx.hl7.lt/fhir/ValueSet/bp-panel-observation
+    - https://tx.hl7.lt/fhir/ValueSet/bp-systolic-observation
+    - https://tx.hl7.lt/fhir/ValueSet/bp-unit
+    - https://tx.hl7.lt/fhir/ValueSet/bmi-unit
+    - https://tx.hl7.lt/fhir/ValueSet/body-height-observation
+    - https://tx.hl7.lt/fhir/ValueSet/body-length-unit
+    - https://tx.hl7.lt/fhir/ValueSet/body-weight-associated-situation
+    - https://tx.hl7.lt/fhir/ValueSet/body-weight-observation
+    - https://tx.hl7.lt/fhir/ValueSet/device-type-blood-pressure
+    - https://tx.hl7.lt/fhir/ValueSet/heart-rate-measurement-device
+    - https://tx.hl7.lt/fhir/ValueSet/device-type-height-length
+    - https://tx.hl7.lt/fhir/ValueSet/device-type-weight
+    - https://tx.hl7.lt/fhir/ValueSet/exertion-phase
+    - https://tx.hl7.lt/fhir/ValueSet/heart-rate-measurement-body-location
+    - https://tx.hl7.lt/fhir/ValueSet/heart-rate-measurement-method
+    - https://tx.hl7.lt/fhir/ValueSet/heart-rate-observation
+    - https://tx.hl7.lt/fhir/ValueSet/height-length-measurement-method
+    - https://tx.hl7.lt/fhir/ValueSet/measurement-environment
+    - https://tx.hl7.lt/fhir/ValueSet/numeric-result-interpretation-non-panic
+    - https://tx.hl7.lt/fhir/ValueSet/numeric-result-interpretation
+    - https://tx.hl7.lt/fhir/ValueSet/body-position
+    - https://tx.hl7.lt/fhir/ValueSet/vital-signs-rate-unit
+    - https://tx.hl7.lt/fhir/ValueSet/sleep-status
+    - https://tx.hl7.lt/fhir/ValueSet/waist-circumference-observation
+    - https://tx.hl7.lt/fhir/ValueSet/waist-circumference-result-interpretation
+    - https://tx.hl7.lt/fhir/CodeSystem/snomed-vitalsigns-extension
 
   excludettl: true
   shownav: true

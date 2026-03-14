@@ -2,6 +2,7 @@ Extension: AssociatedSituation
 Id: associated-situation
 Title: "Associated Situation Extension"
 Description: "Situations that may affect the measurement or assessment."
+* ^url = $associated-situation-url
 * ^extension[0].url = "http://hl7.org/fhir/StructureDefinition/structuredefinition-wg"
 * ^extension[=].valueCode = #oo
 * ^extension[+].url = "http://hl7.org/fhir/StructureDefinition/structuredefinition-fmm"

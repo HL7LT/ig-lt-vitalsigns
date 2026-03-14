@@ -1,8 +1,9 @@
 Profile: HeadCircumference
-Parent: LTBaseObservation
+Parent: ObservationLt
 Id: head-circumference
 Title: "Head Circumference"
 Description: "Head Occipital-frontal circumference by Tape measure. The measurement in centimeters or inches around the largest part of the head."
+* ^url = $head-circumference-url
 
 * ^version = "1.0.0"
 * ^status = #draft
@@ -51,18 +52,3 @@ Description: "Head Occipital-frontal circumference by Tape measure. The measurem
 * method 0..0
 
 
-Instance: example-head-circumference
-InstanceOf: HeadCircumference
-Usage: #example
-Title: "Example Head Circumference Observation"
-Description: "Measured head circumference using a tape measure."
-* status = #final
-* category[VSCat] = $observation-category#vital-signs "Vital Signs"
-* code.coding[0] = $loinc#9843-4 "Head Occipital-frontal circumference"
-* code.coding[+] = $loinc#8287-5 "Head Occipital-frontal circumference by Tape measure"
-* subject = Reference(example-patient)
-* effectiveDateTime = "2019-10-16T12:12:29-09:00"
-* valueQuantity.value = 35
-* valueQuantity.unit = "cm"
-* valueQuantity.system = "http://unitsofmeasure.org"
-* valueQuantity.code = #cm

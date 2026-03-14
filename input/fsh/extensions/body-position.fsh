@@ -3,6 +3,7 @@ Id: body-position
 Title: "Body Position Extension"
 Description: "The position of the body when the observation was done, e.g. standing, sitting. To be used only when the body position in not precoordinated in the observation code."
 Context: Observation, Specimen.collection
+* ^url = $body-position-url
 * ^extension[0].url = "http://hl7.org/fhir/StructureDefinition/structuredefinition-wg"
 * ^extension[=].valueCode = #oo
 * ^extension[+].url = "http://hl7.org/fhir/StructureDefinition/structuredefinition-fmm"

@@ -2,6 +2,7 @@ Extension: MeasurementSetting
 Id: measurement-setting
 Title: "Measurement Setting Extension"
 Description: "The location or setting the subject was in when the measurement was obtained. For example, home, clinic, hospital. etc."
+* ^url = $measurement-setting-url
 * ^extension[0].url = "http://hl7.org/fhir/StructureDefinition/structuredefinition-wg"
 * ^extension[=].valueCode = #oo
 * ^extension[+].url = "http://hl7.org/fhir/StructureDefinition/structuredefinition-fmm"

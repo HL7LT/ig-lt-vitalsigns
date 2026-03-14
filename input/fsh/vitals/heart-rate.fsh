@@ -1,10 +1,11 @@
 
 
 Profile: HeartRate
-Parent: LTBaseObservation
+Parent: ObservationLt
 Id: heart-rate
 Title: "Heart Rate"
 Description: "The number of heart beats in a minute."
+* ^url = $heart-rate-url
 * ^version = "1.0.0"
 * ^status = #draft
 * ^publisher = "Tallinn University of Technology (TalTech)"
@@ -98,26 +99,4 @@ Description: "If there is no component or hasMember element then either a value[
 
 
 // Example: Heart Rate
-Instance: example-heart-rate
-InstanceOf: HeartRate
-Usage: #example
-Title: "Example Heart Rate Observation"
-Description: "Example observation representing the patient's heart rate measured at rest."
-* status = #final
-* category[VSCat] = $observation-category#vital-signs "Vital Signs"
-* category[HeartRateCategory] = $loinc#8867-4 "Heart rate"
-* code = $loinc#8867-4 "Heart rate"
-* subject = Reference(example-patient)
-* effectiveDateTime = "2025-10-28T09:25:00+03:00"
-* valueQuantity.value = 72
-* valueQuantity.unit = "/min"
-* valueQuantity.system = "http://unitsofmeasure.org"
-* valueQuantity.code = #/min
-* method = $sct#113011001 "Palpation (procedure)"
-* extension[exerciseAssociation].valueCodeableConcept = $sct#229065009 "Exercise therapy (regime/therapy)"
-* extension[sleepStatus].valueCodeableConcept = $sct#248220008 "Asleep (finding)"
-* interpretation = $observation-interpretation#N "Normal"
-* device = Reference(example-device-heart-rate)
-* bodyStructure = Reference(example-body-structure-blood-pressure)
-* note.text = "Measured manually while patient was seated and relaxed."
 

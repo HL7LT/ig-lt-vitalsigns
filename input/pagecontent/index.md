@@ -32,6 +32,6 @@ Navigate the sections below to access the profiles, terminology bindings, and de
 
 | Name                                             | Role                          | Organization                                    |
 | ------------------------------------------------ | ----------------------------- | ----------------------------------------------- |
-| [Igor Bossenko](https://about.askigor.eu)     | Primary Author                | [HELEX](https://helex.health) |
+| [Igor Bossenko](https://about.askigor.eu)     | Primary Author                | [HELEX Solutions](https://helex.org) |
 | [Peeter Ross](https://www.linkedin.com/in/peeter-ross-5378b74/) | Reviewer           | [TalTech](https://taltech.ee)               |
 | Martynas Bieliauskas                           | Reviewer                 | [LMB](https://lmb.lt)               |

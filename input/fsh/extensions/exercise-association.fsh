@@ -2,6 +2,7 @@ Extension: ExerciseAssociation
 Id: exercise-association
 Title: "Exercise Association Extension"
 Description: "The exercise state associated with the measurement."
+* ^url = $exercise-association-url
 * ^extension[0].url = "http://hl7.org/fhir/StructureDefinition/structuredefinition-wg"
 * ^extension[=].valueCode = #oo
 * ^extension[+].url = "http://hl7.org/fhir/StructureDefinition/structuredefinition-fmm"

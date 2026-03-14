@@ -1,8 +1,9 @@
 Profile: WaistCircumference
-Parent: LTBaseObservation
+Parent: ObservationLt
 Id: waist-circumference
 Title: "Waist Circumference"
 Description: "Waist circumference by Tape measure. The measurement in centimeters or inches around the narrowest part of the waist."
+* ^url = $waist-circumference-url
 
 * ^version = "1.0.0"
 * ^status = #draft
@@ -52,9 +53,9 @@ Description: "Waist circumference by Tape measure. The measurement in centimeter
 * interpretation ^slicing.discriminator.type = #pattern
 * interpretation ^slicing.discriminator.path = "$this"
 * interpretation ^slicing.rules = #open
-* interpretation contains Numeric 1..1 MS and Disease 0..1 MS
-* interpretation[Numeric] from NumericResultInterpretation 
-* interpretation[Numeric] ^definition = "This value set defines the set of possible interpretations for waist circumference results."
+* interpretation contains Category 0..1 MS and Disease 0..1 MS
+* interpretation[Category] from NumericResultInterpretation 
+* interpretation[Category] ^definition = "This value set defines the set of possible interpretations for waist circumference measurement."
 * interpretation[Disease] from WaistCircumferenceResultInterpretation 
 * interpretation[Disease] ^definition = "This value set defines the set of possible diseases hypothesis based on the interpretation of waist circumference results."
 
@@ -64,18 +65,4 @@ Description: "Waist circumference by Tape measure. The measurement in centimeter
 * method 0..0
 
 
-Instance: example-waist-circumference
-InstanceOf: WaistCircumference
-Title: "Example Waist Circumference Observation"
-Description: "Measured waist circumference using a tape measure."
-Usage: #example
-* status = #final
-* category[VSCat] = $observation-category#vital-signs "Vital Signs"
-* category[WaistCircumferenceCode] = $loinc#8280-0 "Waist Circumference at umbilicus by Tape measure"
-* code = $sct#276361009 "Waist circumference (observable entity)"
-* subject = Reference(example-patient)
-* effectiveDateTime = "2019-10-16T12:12:29-09:00"
-* valueQuantity = 130 $ucum#cm "cm"
-* interpretation[Numeric] = $observation-interpretation#HH "Panic High"
-* interpretation[Disease] = $sct#249533007 "Obese abdomen (finding)"
 
