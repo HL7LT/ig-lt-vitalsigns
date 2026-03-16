@@ -21,16 +21,11 @@ publisher:
   email: info@medicinosnk.lt
 
 dependencies:
-  hl7.fhir.eu.base-r5: 0.1.0
-  lt.hl7.fhir.base: dev #current
+  lt.hl7.fhir.base: 0.3.0 #current
+  lt.hl7.fhir.eu: 0.0.2
+  hl7.fhir.eu.base-r5: 0.1.0    # The R5 EU Base
 
 
-# the following are for offline use only
-#  hl7.fhir.uv.tools.r5: 0.5.0
-#  hl7.terminology.r5: 6.4.0
-#  hl7.fhir.uv.extensions.r5: 5.2.0
-#
-#
 # The pages property corresponds to IG.definition.page. SUSHI can
 # auto-generate the page list, but if the author includes pages in
 # this file, it is assumed that the author will fully manage the
