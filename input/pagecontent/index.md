@@ -8,12 +8,21 @@ This Implementation Guide (IG) specifies how to consistently represent and excha
 
 This guide provides structured FHIR profiles and guidance for core vital signs and associated anthropometric data, including:
 
-- **Arterial Blood Pressure (ABP)**: Systolic and diastolic measurement. The profiles also include requirements for capturing measurement circumstances (e.g., sitting, standing, or using ambulatory monitoring) and the measurement location, ensuring full clinical context.
-- **Heart Rate (HR)**: Pulse measurement.
+- **Arterial Blood Pressure (ABP)**: Systolic, diastolic, and mean arterial pressure as a panel. The profiles include requirements for capturing measurement circumstances (e.g., sitting, standing, or using ambulatory monitoring), measurement location, and device (cuff size, method), ensuring full clinical context.
+- **Heart Rate (HR)**: Pulse measurement, including optional body location and measurement method.
+- **Anthropometric Data**: Body height (body length), body weight (body mass), and Body Mass Index (BMI). These measurements are especially critical for assessing the risk of obesity and related chronic diseases (cardiovascular disease, diabetes).
+- **Head Circumference**: Head circumference measurement, typically used in paediatric and growth assessment.
+- **Waist Circumference**: Waist circumference for metabolic and cardiovascular risk assessment.
+
+Supporting resources include Device profiles (blood pressure monitor, scale, height-length device, heart rate device) and the BodyStructure profile for blood pressure measurement site. Extensions support body position, sleep status, exercise association, measurement setting, and associated situation (e.g. for weight).
+
+### Planned for future releases
+
+The following are not yet profiled in this version of the IG:
+
 - **Body Temperature**: Measurement in degrees Celsius.
 - **Respiratory Rate**: Number of breaths per minute.
-- **Anthropometric Data**: Height (Body length) and Weight (Body mass), which are used for calculating Body Mass Index (BMI). These measurements are especially critical for assessing the risk of obesity and related chronic diseases (cardiovascular disease, diabetes).
-- **Pain Assessment**: Evaluation of pain intensity using validated scales. Pain is often referred to as the fifth vital sign; this IG standardizes the assessment using scales such as NRS (Numeric Rating Scale) and VAS (Visual Analog Scale).
+- **Pain Assessment**: Evaluation of pain intensity using validated scales (e.g. NRS, VAS).
 
 ## Why Use This Guide?
 
