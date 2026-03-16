@@ -6,8 +6,7 @@ Usage: #example
 
 * status = #final
 * category[VSCat] = $observation-category#vital-signs "Vital Signs"
-* code.coding[0] = $loinc#9843-4 "Head Occipital-frontal circumference"
-* code.coding[+] = $loinc#8287-5 "Head Occipital-frontal circumference by Tape measure"
+* code.coding[LOINC] = $loinc#9843-4 "Head Occipital-frontal circumference"
 * subject = Reference(patient-example)
 * effectiveDateTime = "2019-10-16T12:12:29-09:00"
 * valueQuantity.value = 35

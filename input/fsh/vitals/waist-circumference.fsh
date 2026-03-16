@@ -32,12 +32,18 @@ Description: "Waist circumference by Tape measure. The measurement in centimeter
 * category[WaistCircumferenceCode] = $loinc#8280-0 "Waist Circumference at umbilicus by Tape measure"
 * category[WaistCircumferenceCode] ^definition = "This waist circumference category"
 
-* code from WaistCircumferenceObservation (preferred)
+* code.coding ^slicing.discriminator.type = #value
+* code.coding ^slicing.discriminator.path = "system"
+* code.coding ^slicing.rules = #open
+* code.coding contains LOINC 1..1 MS and SNOMED 0..1
+* code.coding[LOINC] from WaistCircumferenceObservationLOINC (preferred)
+* code.coding[LOINC].system = "http://loinc.org"
+* code.coding[LOINC] ^short = "Waist Circumference (LOINC)"
+* code.coding[SNOMED] from WaistCircumferenceObservationSNOMED (extensible)
+* code.coding[SNOMED].system = "http://snomed.info/sct"
+* code.coding[SNOMED] ^short = "Waist Circumference (SNOMED CT)"
 * code ^short = "Waist Circumference observation"
-* code ^definition = "Waist Circumference observation."
-* code ^binding.extension[0].url = "http://hl7.org/fhir/StructureDefinition/elementdefinition-bindingName"
-* code ^binding.extension[=].valueString = "VitalSignsWaistCircumference"
-* code ^binding.description = "This identifies the set of LOINC codes that are appropriate for representing waist circumference vital sign measurements in Observation.code."
+* code ^definition = "Waist Circumference observation. LOINC required; SNOMED CT optional for dual coding."
 
 * value[x] only Quantity
 * valueQuantity from BodyLengthUnits (required)

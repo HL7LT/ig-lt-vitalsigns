@@ -1,5 +1,3 @@
-
-
 Profile: HeartRate
 Parent: ObservationLt
 Id: heart-rate
@@ -35,12 +33,18 @@ Description: "The number of heart beats in a minute."
 * category[VSCat] = $observation-category#vital-signs
 * category[VSCat] ^definition = "This vital signs category"
 * category[HeartRateCategory] = $loinc#8867-4
-* code from HeartRateObservation (preferred)
+* code.coding ^slicing.discriminator.type = #value
+* code.coding ^slicing.discriminator.path = "system"
+* code.coding ^slicing.rules = #open
+* code.coding contains LOINC 1..1 MS and SNOMED 0..1
+* code.coding[LOINC] from HeartRateObservation (preferred)
+* code.coding[LOINC].system = "http://loinc.org"
+* code.coding[LOINC] ^short = "Heart Rate (LOINC)"
+* code.coding[SNOMED] from HeartRateObservationSNOMED (extensible)
+* code.coding[SNOMED].system = "http://snomed.info/sct"
+* code.coding[SNOMED] ^short = "Heart Rate (SNOMED CT)"
 * code ^short = "Heart Rate"
-* code ^definition = "Heart Rate."
-* code ^binding.extension[0].url = "http://hl7.org/fhir/StructureDefinition/elementdefinition-bindingName"
-* code ^binding.extension[=].valueString = "VitalSignsHeartRate"
-* code ^binding.description = "This identifies the set of LOINC codes that are appropriate for representing heart rate vital sign measurements in Observation.code. <br/>R6! Proper link is https://build.fhir.org/valueset-observation-vitalsign-heartrate.html <br/>TODO: own valieset that based on SNOMED"
+* code ^definition = "Heart rate. LOINC required; SNOMED CT optional for dual coding."
 
 * valueQuantity from VitalSignsRateUnit (required)
 * valueQuantity ^short = "Common UCUM rate units for vital signs including heart and respiratory rate. <br/>R6! Proper link is https://build.fhir.org/valueset-ucum-vitalsignsrate.html."

@@ -7,7 +7,8 @@ Usage: #example
 * status = #final
 * category[VSCat] = $observation-category#vital-signs "Vital Signs"
 * category[WaistCircumferenceCode] = $loinc#8280-0 "Waist Circumference at umbilicus by Tape measure"
-* code = $sct#276361009 "Waist circumference (observable entity)"
+* code.coding[LOINC] = $loinc#8280-0 "Waist Circumference at umbilicus by Tape measure"
+* code.coding[SNOMED] = $sct#276361009 "Waist circumference (observable entity)"
 * subject = Reference(patient-example)
 * effectiveDateTime = "2019-10-16T12:12:29-09:00"
 * valueQuantity = 130 $ucum#cm "cm"

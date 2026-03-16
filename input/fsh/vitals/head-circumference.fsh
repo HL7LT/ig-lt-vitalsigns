@@ -29,9 +29,18 @@ Description: "Head Occipital-frontal circumference by Tape measure. The measurem
 * category[VSCat] = $observation-category#vital-signs
 * category[VSCat] ^definition = "Vital signs"
 
-* code = $loinc#8287-5 "Head Occipital-frontal circumference by Tape measure"
+* code.coding ^slicing.discriminator.type = #value
+* code.coding ^slicing.discriminator.path = "system"
+* code.coding ^slicing.rules = #open
+* code.coding contains LOINC 1..1 MS and SNOMED 0..1
+* code.coding[LOINC] from HeadCircumferenceObservation (preferred)
+* code.coding[LOINC].system = "http://loinc.org"
+* code.coding[LOINC] ^short = "Head Circumference (LOINC)"
+* code.coding[SNOMED] from HeadCircumferenceObservationSNOMED (extensible)
+* code.coding[SNOMED].system = "http://snomed.info/sct"
+* code.coding[SNOMED] ^short = "Head Circumference (SNOMED CT)"
 * code ^short = "Head Circumference"
-* code ^definition = "Head Circumference."
+* code ^definition = "Head circumference. LOINC required (9843-4 or 8287-5); SNOMED CT optional for dual coding."
 
 * value[x] only Quantity
 * valueQuantity from BodyLengthUnits (required)

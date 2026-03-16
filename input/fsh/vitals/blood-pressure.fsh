@@ -27,12 +27,18 @@ Description: "Blood Pressure Panel; a grouping of systolic, diastolic, and mean 
 * category[VSCat] = $observation-category#vital-signs
 * category[VSCat] ^definition = "This vital signs category"
 * category[BPCategory] = $loinc#85354-9
-* code from BloodPressurePanelObservation (preferred)
+* code.coding ^slicing.discriminator.type = #value
+* code.coding ^slicing.discriminator.path = "system"
+* code.coding ^slicing.rules = #open
+* code.coding contains LOINC 1..1 MS and SNOMED 0..1
+* code.coding[LOINC] from BloodPressurePanelObservation (preferred)
+* code.coding[LOINC].system = "http://loinc.org"
+* code.coding[LOINC] ^short = "Blood Pressure Panel (LOINC)"
+* code.coding[SNOMED] from BloodPressurePanelObservationSNOMED (extensible)
+* code.coding[SNOMED].system = "http://snomed.info/sct"
+* code.coding[SNOMED] ^short = "Blood Pressure Panel (SNOMED CT)"
 * code ^short = "Blood Pressure"
-* code ^definition = "Blood Pressure."
-* code ^binding.extension[0].url = "http://hl7.org/fhir/StructureDefinition/elementdefinition-bindingName"
-* code ^binding.extension[=].valueString = "BloodPressurePanelObservation"
-* code ^binding.description = "This identifies the set of LOINC codes that are appropriate for representing an arterial systolic and diastolic BP panel of vital sign measurements in Observation.code."
+* code ^definition = "Blood pressure panel. LOINC required; SNOMED CT optional for dual coding."
 * value[x] ..0
 * component ..* MS
 * component ^slicing.discriminator[0].type = #value
@@ -50,7 +56,6 @@ Description: "Blood Pressure Panel; a grouping of systolic, diastolic, and mean 
     SystolicBP 1..1 MS and
     DiastolicBP 1..1 MS
 * component[SystolicBP] obeys vsp-3-sbp
-* component[SystolicBP].code = $loinc#8480-6
 * component[SystolicBP].extension 1..
 * component[SystolicBP].extension ^slicing.discriminator[0].type = #value
 * component[SystolicBP].extension ^slicing.discriminator[=].path = "url"
@@ -60,13 +65,18 @@ Description: "Blood Pressure Panel; a grouping of systolic, diastolic, and mean 
 * component[SystolicBP].extension contains $observation-component-category named SBPCode 1..1
 * component[SystolicBP].extension[SBPCode].value[x] 1..1
 * component[SystolicBP].extension[SBPCode].value[x] = $loinc#8480-6
-* component[SystolicBP].code 1..
-* component[SystolicBP].code from BloodPressureSystolicObservation (preferred)
+* component[SystolicBP].code.coding ^slicing.discriminator.type = #value
+* component[SystolicBP].code.coding ^slicing.discriminator.path = "system"
+* component[SystolicBP].code.coding ^slicing.rules = #open
+* component[SystolicBP].code.coding contains LOINC 1..1 MS and SNOMED 0..1
+* component[SystolicBP].code.coding[LOINC] from BloodPressureSystolicObservation (preferred)
+* component[SystolicBP].code.coding[LOINC].system = "http://loinc.org"
+* component[SystolicBP].code.coding[LOINC] ^short = "Systolic BP (LOINC)"
+* component[SystolicBP].code.coding[SNOMED] from BloodPressureSystolicObservationSNOMED (extensible)
+* component[SystolicBP].code.coding[SNOMED].system = "http://snomed.info/sct"
+* component[SystolicBP].code.coding[SNOMED] ^short = "Systolic BP (SNOMED CT)"
 * component[SystolicBP].code ^short = "Systolic Blood Pressure"
-* component[SystolicBP].code ^definition = "Systolic Blood Pressure."
-* component[SystolicBP].code ^binding.extension[0].url = "http://hl7.org/fhir/StructureDefinition/elementdefinition-bindingName"
-* component[SystolicBP].code ^binding.extension[=].valueString = "BloodPressureSystolicObservation"
-* component[SystolicBP].code ^binding.description = "This identifies the set of LOINC codes that are appropriate for representing an arterial systolic BP vital sign measurement in Observation.component.code."
+* component[SystolicBP].code ^definition = "Systolic blood pressure. LOINC required; SNOMED CT optional."
 * component[SystolicBP].value[x] only Quantity
 * component[SystolicBP].valueQuantity only Quantity
 * component[SystolicBP].valueQuantity MS
@@ -100,13 +110,18 @@ Description: "Blood Pressure Panel; a grouping of systolic, diastolic, and mean 
 * component[DiastolicBP].extension[DBPCode].value[x] 1..1
 * component[DiastolicBP].extension[DBPCode].value[x] = $loinc#8462-4
 
-* component[DiastolicBP].code 1..
-* component[DiastolicBP].code from BloodPressureDiastolicObservation (preferred)
+* component[DiastolicBP].code.coding ^slicing.discriminator.type = #value
+* component[DiastolicBP].code.coding ^slicing.discriminator.path = "system"
+* component[DiastolicBP].code.coding ^slicing.rules = #open
+* component[DiastolicBP].code.coding contains LOINC 1..1 MS and SNOMED 0..1
+* component[DiastolicBP].code.coding[LOINC] from BloodPressureDiastolicObservation (preferred)
+* component[DiastolicBP].code.coding[LOINC].system = "http://loinc.org"
+* component[DiastolicBP].code.coding[LOINC] ^short = "Diastolic BP (LOINC)"
+* component[DiastolicBP].code.coding[SNOMED] from BloodPressureDiastolicObservationSNOMED (extensible)
+* component[DiastolicBP].code.coding[SNOMED].system = "http://snomed.info/sct"
+* component[DiastolicBP].code.coding[SNOMED] ^short = "Diastolic BP (SNOMED CT)"
 * component[DiastolicBP].code ^short = "Diastolic Blood Pressure"
-* component[DiastolicBP].code ^definition = "Diastolic Blood Pressure."
-* component[DiastolicBP].code ^binding.extension[0].url = "http://hl7.org/fhir/StructureDefinition/elementdefinition-bindingName"
-* component[DiastolicBP].code ^binding.extension[=].valueString = "BloodPressureDiastolicObservation"
-* component[DiastolicBP].code ^binding.description = "This identifies the set of LOINC codes that are appropriate for representing an arterial diastolic BP vital sign measurement in Observation.component.code."
+* component[DiastolicBP].code ^definition = "Diastolic blood pressure. LOINC required; SNOMED CT optional."
 * component[DiastolicBP].value[x] only Quantity
 * component[DiastolicBP].valueQuantity only Quantity
 * component[DiastolicBP].valueQuantity MS
@@ -168,9 +183,19 @@ Description: "Blood Pressure Panel; a grouping of systolic, diastolic, and mean 
 * component[MeanArterialBP].extension[MeanCode].value[x] 1..1
 * component[MeanArterialBP].extension[MeanCode].value[x] = $loinc#8478-0
 
-* component[MeanArterialBP].code = $loinc#8478-0
+* component[MeanArterialBP].code.coding ^slicing.discriminator.type = #value
+* component[MeanArterialBP].code.coding ^slicing.discriminator.path = "system"
+* component[MeanArterialBP].code.coding ^slicing.rules = #open
+* component[MeanArterialBP].code.coding contains LOINC 1..1 MS and SNOMED 0..1
+* component[MeanArterialBP].code.coding[LOINC] from BloodPressureMeanObservation (preferred)
+* component[MeanArterialBP].code.coding[LOINC].system = "http://loinc.org"
+* component[MeanArterialBP].code.coding[LOINC] ^short = "Mean BP (LOINC)"
+* component[MeanArterialBP].code.coding[SNOMED] from BloodPressureMeanObservationSNOMED (extensible)
+* component[MeanArterialBP].code.coding[SNOMED].system = "http://snomed.info/sct"
+* component[MeanArterialBP].code.coding[SNOMED] ^short = "Mean BP (SNOMED CT)"
 * component[MeanArterialBP].code MS
 * component[MeanArterialBP].code ^short = "Mean blood pressure"
+* component[MeanArterialBP].code ^definition = "Mean arterial blood pressure. LOINC required; SNOMED CT optional."
 * component[MeanArterialBP].value[x] only Quantity
 * component[MeanArterialBP].value[x] MS
 * component[MeanArterialBP].value[x].value 1.. MS

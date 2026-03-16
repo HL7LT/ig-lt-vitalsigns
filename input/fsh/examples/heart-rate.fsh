@@ -7,7 +7,7 @@ Usage: #example
 * status = #final
 * category[VSCat] = $observation-category#vital-signs "Vital Signs"
 * category[HeartRateCategory] = $loinc#8867-4 "Heart rate"
-* code = $loinc#8867-4 "Heart rate"
+* code.coding[LOINC] = $loinc#8867-4 "Heart rate"
 * subject = Reference(patient-example)
 * effectiveDateTime = "2025-10-28T09:25:00+03:00"
 * valueQuantity.value = 72

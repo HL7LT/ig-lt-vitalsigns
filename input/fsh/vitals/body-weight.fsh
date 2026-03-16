@@ -36,12 +36,18 @@ Description: "The measured mass of an individual's body."
 * category[BodyWeightCode] = $loinc#29463-7
 * category[BodyWeightCode] ^definition = "This body weight category"
 
-* code from BodyWeightObservation (preferred)
+* code.coding ^slicing.discriminator.type = #value
+* code.coding ^slicing.discriminator.path = "system"
+* code.coding ^slicing.rules = #open
+* code.coding contains LOINC 1..1 MS and SNOMED 0..1
+* code.coding[LOINC] from BodyWeightObservation (preferred)
+* code.coding[LOINC].system = "http://loinc.org"
+* code.coding[LOINC] ^short = "Body Weight (LOINC)"
+* code.coding[SNOMED] from BodyWeightObservationSNOMED (extensible)
+* code.coding[SNOMED].system = "http://snomed.info/sct"
+* code.coding[SNOMED] ^short = "Body Weight (SNOMED CT)"
 * code ^short = "Body Weight"
-* code ^definition = "Body Weight."
-* code ^binding.extension[0].url = "http://hl7.org/fhir/StructureDefinition/elementdefinition-bindingName"
-* code ^binding.extension[=].valueString = "BodyWeightObservation"
-* code ^binding.description = "This identifies the set of LOINC codes that are appropriate for representing body weight vital sign measurements in Observation.code."
+* code ^definition = "Body Weight. LOINC required; SNOMED CT optional for dual coding."
 
 * valueQuantity MS
 * valueQuantity from BodyWeightUnits (required)

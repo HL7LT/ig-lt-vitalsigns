@@ -82,17 +82,41 @@ Alias: $blood-pressure-measurement-method-vs-url = https://tx.hl7.lt/fhir/ValueS
 // Blood Pressure Panel Observation
 Alias: $blood-pressure-panel-observation-vs-url = https://tx.hl7.lt/fhir/ValueSet/bp-panel-observation
 
+// Blood Pressure Panel Observation (SNOMED CT)
+Alias: $blood-pressure-panel-observation-snomed-vs-url = https://tx.hl7.lt/fhir/ValueSet/bp-panel-observation-snomed
+
 // Blood Pressure Systolic Observation
 Alias: $blood-pressure-systolic-observation-vs-url = https://tx.hl7.lt/fhir/ValueSet/bp-systolic-observation
 
+// Blood Pressure Systolic Observation (SNOMED CT)
+Alias: $bp-systolic-observation-snomed-vs-url = https://tx.hl7.lt/fhir/ValueSet/bp-systolic-observation-snomed
+
+// Blood Pressure Diastolic Observation (SNOMED CT)
+Alias: $bp-diastolic-observation-snomed-vs-url = https://tx.hl7.lt/fhir/ValueSet/bp-diastolic-observation-snomed
+
+// Blood Pressure Mean Observation
+Alias: $bp-mean-observation-vs-url = https://tx.hl7.lt/fhir/ValueSet/bp-mean-observation
+
+// Blood Pressure Mean Observation (SNOMED CT)
+Alias: $bp-mean-observation-snomed-vs-url = https://tx.hl7.lt/fhir/ValueSet/bp-mean-observation-snomed
+
 // Blood Pressure Unit
 Alias: $blood-pressure-unit-vs-url = https://tx.hl7.lt/fhir/ValueSet/bp-unit
+
+// BMI Observation
+Alias: $bmi-observation-vs-url = https://tx.hl7.lt/fhir/ValueSet/bmi-observation
+
+// BMI Observation (SNOMED CT)
+Alias: $bmi-observation-snomed-vs-url = https://tx.hl7.lt/fhir/ValueSet/bmi-observation-snomed
 
 // BMI Unit
 Alias: $bmi-unit-vs-url = https://tx.hl7.lt/fhir/ValueSet/bmi-unit
 
 // Body Height Observation
 Alias: $body-height-observation-vs-url = https://tx.hl7.lt/fhir/ValueSet/body-height-observation
+
+// Body Height Observation (SNOMED CT)
+Alias: $body-height-observation-snomed-vs-url = https://tx.hl7.lt/fhir/ValueSet/body-height-observation-snomed
 
 // Body Length Unit
 Alias: $body-length-unit-vs-url = https://tx.hl7.lt/fhir/ValueSet/body-length-unit
@@ -102,6 +126,9 @@ Alias: $body-weight-associated-situation-vs-url = https://tx.hl7.lt/fhir/ValueSe
 
 // Body Weight Observation
 Alias: $body-weight-observation-vs-url = https://tx.hl7.lt/fhir/ValueSet/body-weight-observation
+
+// Body Weight Observation (SNOMED CT)
+Alias: $body-weight-observation-snomed-vs-url = https://tx.hl7.lt/fhir/ValueSet/body-weight-observation-snomed
 
 // Device Type Blood Pressure
 Alias: $device-type-blood-pressure-vs-url = https://tx.hl7.lt/fhir/ValueSet/device-type-blood-pressure
@@ -118,6 +145,12 @@ Alias: $device-type-weight-vs-url = https://tx.hl7.lt/fhir/ValueSet/device-type-
 // Exertion Phase
 Alias: $exertion-phase-vs-url = https://tx.hl7.lt/fhir/ValueSet/exertion-phase
 
+// Head Circumference Observation
+Alias: $head-circumference-observation-vs-url = https://tx.hl7.lt/fhir/ValueSet/head-circumference-observation
+
+// Head Circumference Observation (SNOMED CT)
+Alias: $head-circumference-observation-snomed-vs-url = https://tx.hl7.lt/fhir/ValueSet/head-circumference-observation-snomed
+
 // Heart Rate Measurement Body Location
 Alias: $heart-rate-measurement-body-location-vs-url = https://tx.hl7.lt/fhir/ValueSet/heart-rate-measurement-body-location
 
@@ -126,6 +159,9 @@ Alias: $heart-rate-measurement-method-vs-url = https://tx.hl7.lt/fhir/ValueSet/h
 
 // Heart Rate Observation
 Alias: $heart-rate-observation-vs-url = https://tx.hl7.lt/fhir/ValueSet/heart-rate-observation
+
+// Heart Rate Observation (SNOMED CT)
+Alias: $heart-rate-observation-snomed-vs-url = https://tx.hl7.lt/fhir/ValueSet/heart-rate-observation-snomed
 
 // Height Length Measurement Method
 Alias: $height-length-measurement-method-vs-url = https://tx.hl7.lt/fhir/ValueSet/height-length-measurement-method
@@ -148,8 +184,11 @@ Alias: $vital-signs-rate-unit-vs-url = https://tx.hl7.lt/fhir/ValueSet/vital-sig
 // Vital Signs Sleep Status
 Alias: $vital-signs-sleep-status-vs-url = https://tx.hl7.lt/fhir/ValueSet/sleep-status
 
-// Waist Circumference Observation
-Alias: $waist-circumference-observation-vs-url = https://tx.hl7.lt/fhir/ValueSet/waist-circumference-observation
+// Waist Circumference Observation (LOINC)
+Alias: $waist-circumference-observation-loinc-vs-url = https://tx.hl7.lt/fhir/ValueSet/waist-circumference-observation-loinc
+
+// Waist Circumference Observation (SNOMED CT)
+Alias: $waist-circumference-observation-snomed-vs-url = https://tx.hl7.lt/fhir/ValueSet/waist-circumference-observation-snomed
 
 // Waist Circumference Result Interpretation
 Alias: $waist-circumference-result-interpretation-vs-url = https://tx.hl7.lt/fhir/ValueSet/waist-circumference-result-interpretation

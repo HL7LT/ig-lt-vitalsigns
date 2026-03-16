@@ -35,12 +35,18 @@ Description: "The measurement in centimeters or feet and inches from the top of 
 * category[BodyHeightCategory] = $loinc#8302-2
 * category[BodyHeightCategory] ^definition = "This body height category"
 
-* code from BodyHeightObservation (preferred)
+* code.coding ^slicing.discriminator.type = #value
+* code.coding ^slicing.discriminator.path = "system"
+* code.coding ^slicing.rules = #open
+* code.coding contains LOINC 1..1 MS and SNOMED 0..1
+* code.coding[LOINC] from BodyHeightObservation (preferred)
+* code.coding[LOINC].system = "http://loinc.org"
+* code.coding[LOINC] ^short = "Body Height (LOINC)"
+* code.coding[SNOMED] from BodyHeightObservationSNOMED (extensible)
+* code.coding[SNOMED].system = "http://snomed.info/sct"
+* code.coding[SNOMED] ^short = "Body Height (SNOMED CT)"
 * code ^short = "Body Height"
-* code ^definition = "Body Height."
-* code ^binding.extension[0].url = "http://hl7.org/fhir/StructureDefinition/elementdefinition-bindingName"
-* code ^binding.extension[=].valueString = "VitalSignsBodyHeight"
-* code ^binding.description = "This identifies the set of LOINC codes that are appropriate for representing body height (including body length) vital sign measurements in Observation.code."
+* code ^definition = "Body height. LOINC required; SNOMED CT optional for dual coding."
 
 * value[x] only Quantity
 * valueQuantity from BodyLengthUnits (required)

@@ -29,9 +29,18 @@ Description: "Body Mass Index (BMI) is a measure of body fat based on height and
 * category[VSCat] = $observation-category#vital-signs
 * category[VSCat] ^definition = "Vital signs"
 
-* code = $loinc#39156-5 "Body mass index (BMI) [Ratio]"
+* code.coding ^slicing.discriminator.type = #value
+* code.coding ^slicing.discriminator.path = "system"
+* code.coding ^slicing.rules = #open
+* code.coding contains LOINC 1..1 MS and SNOMED 0..1
+* code.coding[LOINC] from BMIObservation (preferred)
+* code.coding[LOINC].system = "http://loinc.org"
+* code.coding[LOINC] ^short = "Body Mass Index (LOINC)"
+* code.coding[SNOMED] from BMIObservationSNOMED (extensible)
+* code.coding[SNOMED].system = "http://snomed.info/sct"
+* code.coding[SNOMED] ^short = "Body Mass Index (SNOMED CT)"
 * code ^short = "Body Mass Index"
-* code ^definition = "Body Mass Index"
+* code ^definition = "Body mass index. LOINC required; SNOMED CT optional for dual coding."
 
 * valueQuantity MS
 * valueQuantity from BMIUnit (required)
@@ -53,4 +62,3 @@ Description: "Body Mass Index (BMI) is a measure of body fat based on height and
 * method 0..0
 
 
-* valueQuantity = 22 $ucum#kg/m2 "kilogram / (meter ^ 2)"

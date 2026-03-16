@@ -7,7 +7,7 @@ Usage: #example
 * status = #final
 * category[VSCat] = $observation-category#vital-signs "Vital Signs"
 * category[BPCategory] = $loinc#85354-9 "Blood pressure panel with all children optional"
-* code = $loinc#85354-9 "Blood pressure panel with all children optional"
+* code.coding[LOINC] = $loinc#85354-9 "Blood pressure panel with all children optional"
 * subject = Reference(patient-example)
 * effectiveDateTime = "2025-08-01T10:00:00Z"
 * interpretation = $observation-interpretation#N "Normal"
@@ -16,7 +16,7 @@ Usage: #example
 
 // Systolic BP component 
 * component[SystolicBP].extension[SBPCode].valueCodeableConcept = $loinc#8480-6 "Systolic blood pressure"
-* component[SystolicBP].code = $loinc#8480-6 "Systolic blood pressure"
+* component[SystolicBP].code.coding[LOINC] = $loinc#8480-6 "Systolic blood pressure"
 * component[SystolicBP].valueQuantity.value = 117
 * component[SystolicBP].valueQuantity.unit = "mmHg"
 * component[SystolicBP].valueQuantity.system = "http://unitsofmeasure.org"
@@ -25,7 +25,7 @@ Usage: #example
 
 // Diastolic BP component 
 * component[DiastolicBP].extension[DBPCode].valueCodeableConcept = $loinc#8462-4 "Diastolic blood pressure"
-* component[DiastolicBP].code = $loinc#8462-4 "Diastolic blood pressure"
+* component[DiastolicBP].code.coding[LOINC] = $loinc#8462-4 "Diastolic blood pressure"
 * component[DiastolicBP].valueQuantity.value = 78
 * component[DiastolicBP].valueQuantity.unit = "mmHg"
 * component[DiastolicBP].valueQuantity.system = "http://unitsofmeasure.org"
@@ -33,7 +33,7 @@ Usage: #example
 * component[DiastolicBP].interpretation = $observation-interpretation#N "Normal"
 
 // Mean Arterial BP component (optional) 
-* component[MeanArterialBP].code = $loinc#8478-0 "Mean blood pressure"
+* component[MeanArterialBP].code.coding[LOINC] = $loinc#8478-0 "Mean blood pressure"
 * component[MeanArterialBP].valueQuantity.value = 91
 * component[MeanArterialBP].valueQuantity.unit = "mmHg"
 * component[MeanArterialBP].valueQuantity.system = "http://unitsofmeasure.org"

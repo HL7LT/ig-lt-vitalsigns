@@ -20,10 +20,11 @@ publisher:
   url: https://medicinosnk.lt
   email: info@medicinosnk.lt
 
+# don't change the order of dependencies!
 dependencies:
-  lt.hl7.fhir.base: 0.3.0 #current
+  lt.hl7.fhir.base: 0.3.0
   lt.hl7.fhir.eu: 0.0.2
-  hl7.fhir.eu.base-r5: 0.1.0    # The R5 EU Base
+  hl7.fhir.eu.base-r5: 0.1.0
 
 
 # The pages property corresponds to IG.definition.page. SUSHI can
@@ -37,15 +38,19 @@ dependencies:
 # with supported extensions (e.g., .md/.xml) will be treated as
 # sub-pages.
 #
-# pages:
-#   index.md:
-#     title: Example Home
-#   implementation.xml:
-#   examples.xml:
-#     title: Examples Overview
-#     simpleExamples.xml:
-#     complexExamples.xml:
-#
+pages:
+  index.md:
+    title: Home
+  guidance.md:
+    title: Guidance
+  terminology.md:
+    title: Terminology
+  examples.md:
+    title: Examples
+  changelog.md:
+    title: Change Log
+  translationinfo.md:
+    title: Translation
 #
 # The parameters property represents IG.definition.parameter. Rather
 # than a list of code/value pairs (as in the ImplementationGuide
@@ -66,13 +71,22 @@ parameters:
     - https://tx.hl7.lt/fhir/ValueSet/bp-measurement-body-location
     - https://tx.hl7.lt/fhir/ValueSet/bp-measurement-method
     - https://tx.hl7.lt/fhir/ValueSet/bp-panel-observation
+    - https://tx.hl7.lt/fhir/ValueSet/bp-panel-observation-snomed
     - https://tx.hl7.lt/fhir/ValueSet/bp-systolic-observation
+    - https://tx.hl7.lt/fhir/ValueSet/bp-systolic-observation-snomed
+    - https://tx.hl7.lt/fhir/ValueSet/bp-diastolic-observation-snomed
+    - https://tx.hl7.lt/fhir/ValueSet/bp-mean-observation
+    - https://tx.hl7.lt/fhir/ValueSet/bp-mean-observation-snomed
     - https://tx.hl7.lt/fhir/ValueSet/bp-unit
+    - https://tx.hl7.lt/fhir/ValueSet/bmi-observation
+    - https://tx.hl7.lt/fhir/ValueSet/bmi-observation-snomed
     - https://tx.hl7.lt/fhir/ValueSet/bmi-unit
     - https://tx.hl7.lt/fhir/ValueSet/body-height-observation
+    - https://tx.hl7.lt/fhir/ValueSet/body-height-observation-snomed
     - https://tx.hl7.lt/fhir/ValueSet/body-length-unit
     - https://tx.hl7.lt/fhir/ValueSet/body-weight-associated-situation
     - https://tx.hl7.lt/fhir/ValueSet/body-weight-observation
+    - https://tx.hl7.lt/fhir/ValueSet/body-weight-observation-snomed
     - https://tx.hl7.lt/fhir/ValueSet/device-type-blood-pressure
     - https://tx.hl7.lt/fhir/ValueSet/heart-rate-measurement-device
     - https://tx.hl7.lt/fhir/ValueSet/device-type-height-length
@@ -80,7 +94,10 @@ parameters:
     - https://tx.hl7.lt/fhir/ValueSet/exertion-phase
     - https://tx.hl7.lt/fhir/ValueSet/heart-rate-measurement-body-location
     - https://tx.hl7.lt/fhir/ValueSet/heart-rate-measurement-method
+    - https://tx.hl7.lt/fhir/ValueSet/head-circumference-observation
+    - https://tx.hl7.lt/fhir/ValueSet/head-circumference-observation-snomed
     - https://tx.hl7.lt/fhir/ValueSet/heart-rate-observation
+    - https://tx.hl7.lt/fhir/ValueSet/heart-rate-observation-snomed
     - https://tx.hl7.lt/fhir/ValueSet/height-length-measurement-method
     - https://tx.hl7.lt/fhir/ValueSet/measurement-environment
     - https://tx.hl7.lt/fhir/ValueSet/numeric-result-interpretation-non-panic
@@ -88,7 +105,8 @@ parameters:
     - https://tx.hl7.lt/fhir/ValueSet/body-position
     - https://tx.hl7.lt/fhir/ValueSet/vital-signs-rate-unit
     - https://tx.hl7.lt/fhir/ValueSet/sleep-status
-    - https://tx.hl7.lt/fhir/ValueSet/waist-circumference-observation
+    - https://tx.hl7.lt/fhir/ValueSet/waist-circumference-observation-loinc
+    - https://tx.hl7.lt/fhir/ValueSet/waist-circumference-observation-snomed
     - https://tx.hl7.lt/fhir/ValueSet/waist-circumference-result-interpretation
     - https://tx.hl7.lt/fhir/CodeSystem/snomed-vitalsigns-extension
 
@@ -120,6 +138,10 @@ parameters:
 # ╰────────────────────────────────────────────────────────────────────────────────────────────────╯
 menu:
   Home: index.html
+  Guidance: guidance.html
+  Terminology: terminology.html
+  Examples: examples.html
+  Change Log: changelog.html
   Artifacts: artifacts.html
 
 # ╭───────────────────────────Less Common Implementation Guide Properties──────────────────────────╮
@@ -189,20 +211,96 @@ menu:
 # is specified by id or name, SUSHI will replace it with the correct
 # URL when generating the IG JSON.
 #
-# groups:
-#   GroupA:
-#     name: Group A
-#     description: The Alpha Group
-#     resources:
-#     - StructureDefinition/animal-patient
-#     - StructureDefinition/arm-procedure
-#   GroupB:
-#     name: Group B
-#     description: The Beta Group
-#     resources:
-#     - StructureDefinition/bark-control
-#     - StructureDefinition/bee-sting
-#
+groups:
+  profiles:
+    name: Profiles
+    description: Observation, Device, and BodyStructure profiles for vital signs
+    resources:
+      - StructureDefinition/blood-pressure-panel
+      - StructureDefinition/body-height
+      - StructureDefinition/bmi
+      - StructureDefinition/body-weight
+      - StructureDefinition/heart-rate
+      - StructureDefinition/head-circumference
+      - StructureDefinition/waist-circumference
+      - StructureDefinition/device-blood-pressure
+      - StructureDefinition/device-body-height
+      - StructureDefinition/device-body-weight
+      - StructureDefinition/device-heart-rate
+      - StructureDefinition/body-structure-blood-pressure
+  extensions:
+    name: Extensions
+    description: Extensions for vital signs context
+    resources:
+      - StructureDefinition/associated-situation
+      - StructureDefinition/body-position
+      - StructureDefinition/exercise-association
+      - StructureDefinition/measurement-setting
+      - StructureDefinition/sleep-status
+  terminology:
+    name: Terminology
+    description: ValueSets and CodeSystems for vital signs
+    resources:
+      - ValueSet/bp-cuff-size
+      - ValueSet/bp-panel-observation
+      - ValueSet/bp-panel-observation-snomed
+      - ValueSet/bp-systolic-observation
+      - ValueSet/bp-systolic-observation-snomed
+      - ValueSet/bp-diastolic-observation
+      - ValueSet/bp-diastolic-observation-snomed
+      - ValueSet/bp-mean-observation
+      - ValueSet/bp-mean-observation-snomed
+      - ValueSet/bp-unit
+      - ValueSet/bp-measurement-body-location
+      - ValueSet/bp-measurement-method
+      - ValueSet/heart-rate-observation
+      - ValueSet/heart-rate-observation-snomed
+      - ValueSet/heart-rate-measurement-body-location
+      - ValueSet/heart-rate-measurement-method
+      - ValueSet/body-height-observation
+      - ValueSet/body-height-observation-snomed
+      - ValueSet/body-weight-observation
+      - ValueSet/body-weight-observation-snomed
+      - ValueSet/bmi-observation
+      - ValueSet/bmi-observation-snomed
+      - ValueSet/bmi-unit
+      - ValueSet/body-length-unit
+      - ValueSet/body-weight-associated-situation
+      - ValueSet/vital-signs-rate-unit
+      - ValueSet/height-length-measurement-method
+      - ValueSet/head-circumference-observation
+      - ValueSet/head-circumference-observation-snomed
+      - ValueSet/waist-circumference-observation-loinc
+      - ValueSet/waist-circumference-observation-snomed
+      - ValueSet/waist-circumference-result-interpretation
+      - ValueSet/device-type-blood-pressure
+      - ValueSet/device-type-height-length
+      - ValueSet/device-type-weight
+      - ValueSet/device-type-heart-rate
+      - ValueSet/vital-signs-body-position
+      - ValueSet/vital-signs-sleep-status
+      - ValueSet/exertion-phase
+      - ValueSet/measurement-environment
+      - ValueSet/numeric-result-interpretation
+      - ValueSet/numeric-result-interpretation-non-panic
+      - CodeSystem/snomed-vitalsigns-extension
+  examples:
+    name: Examples
+    description: Example instances for vital signs and devices
+    resources:
+      - Patient/patient-example
+      - Observation/observation-blood-pressure-example
+      - Observation/observation-heart-rate-example
+      - Observation/observation-body-height-example
+      - Observation/observation-body-weight-example
+      - Observation/observation-bmi-example
+      - Observation/observation-head-circumference-example
+      - Observation/observation-waist-circumference-example
+      - Device/device-blood-pressure-example
+      - Device/device-body-height-example
+      - Device/device-body-weight-example
+      - Device/device-heart-rate-example
+      - BodyStructure/bodystructure-blood-pressure-example
 #
 # The ImplementationGuide resource defines several other properties
 # not represented above. These properties can be used as-is and
