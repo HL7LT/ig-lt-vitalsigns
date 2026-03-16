@@ -56,5 +56,6 @@ Use the following extensions when the observation context is not already express
 
 ## Next steps
 
+- See [**Profiles**](profiles.html) for a full list of observation, device, and extension profiles.
 - Browse [**Artifacts**](artifacts.html) for the full list of profiles, extensions, ValueSets, and examples.
 - Use the [**Terminology**](terminology.html) and [**Examples**](examples.html) pages in this IG for a concise overview of codes and sample instances.

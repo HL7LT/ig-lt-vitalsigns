@@ -41,6 +41,8 @@ dependencies:
 pages:
   index.md:
     title: Home
+  profiles.md:
+    title: Profiles
   guidance.md:
     title: Guidance
   terminology.md:
@@ -138,6 +140,7 @@ parameters:
 # ╰────────────────────────────────────────────────────────────────────────────────────────────────╯
 menu:
   Home: index.html
+  Profiles: profiles.html
   Guidance: guidance.html
   Terminology: terminology.html
   Examples: examples.html

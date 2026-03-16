@@ -13,7 +13,6 @@ Description: "Situations that may affect the measurement or assessment."
 * ^extension[=].valueCode = #can-bind
 * ^version = "2.0.0"
 * ^status = #draft
-//* ^url = "http://hl7.org/fhir/us/vitals/StructureDefinition/AssociatedSituation"
 * ^publisher = "HL7 International - Clinical Information Modeling Initiative"
 * ^contact[0].name = "HL7 International - Clinical Information Modeling Initiative"
 * ^contact[=].telecom.system = #url

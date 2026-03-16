@@ -2,6 +2,8 @@
 
 This page lists the example instances included in the IG. Use them as reference for building valid vital signs and anthropometric resources. Full JSON is available under [**Artifacts**](artifacts.html).
 
+**Why this matters:** Examples show how to populate profiles in real use (subject, device, extensions, units). For implementers they reduce integration effort; for clinicians they illustrate how structured data supports consistent recording and reuse in care pathways.
+
 ## Patient
 
 | Example | Description |

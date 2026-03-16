@@ -2,6 +2,8 @@
 
 This page summarizes the terminology (ValueSets and CodeSystems) used in the Lithuanian Vital Signs IG. For full definitions and bindings, see [**Artifacts**](artifacts.html).
 
+**Why this matters:** Consistent codes and units enable interoperable exchange and reporting (e.g. to registries and analytics). For clinicians, standardised bindings support correct data capture, automated calculations (e.g. BMI), and reliable use in decision support.
+
 ## Observation codes
 
 Observation profiles bind to LOINC and, where applicable, SNOMED CT:
