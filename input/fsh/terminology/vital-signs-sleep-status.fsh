@@ -1,8 +1,8 @@
-ValueSet: VitalSignsSleepStatus
-Id: vital-signs-sleep-status
+ValueSet: SleepStatusVitalSigns
+Id: sleep-status
 Title: "Sleep Status in Vital Signs Measurements"
 Description: "SNOMED CT code system values that contains terms used to indicate the state of wakefulness during measurement."
-* ^url = "https://tx.hl7.lt/fhir/ValueSet/sleep-status"
+* ^url = $sleep-status-vs-url
 * ^version = "1.0.0"
 * ^status = #active
 * ^experimental = false

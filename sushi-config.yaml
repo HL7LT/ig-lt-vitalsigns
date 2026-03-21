@@ -105,7 +105,7 @@ parameters:
     - https://tx.hl7.lt/fhir/ValueSet/numeric-result-interpretation-non-panic
     - https://tx.hl7.lt/fhir/ValueSet/numeric-result-interpretation
     - https://tx.hl7.lt/fhir/ValueSet/body-position
-    - https://tx.hl7.lt/fhir/ValueSet/vital-signs-rate-unit
+    - https://tx.hl7.lt/fhir/ValueSet/rate-unit
     - https://tx.hl7.lt/fhir/ValueSet/sleep-status
     - https://tx.hl7.lt/fhir/ValueSet/waist-circumference-observation-loinc
     - https://tx.hl7.lt/fhir/ValueSet/waist-circumference-observation-snomed
@@ -280,8 +280,8 @@ groups:
       - ValueSet/device-type-height-length
       - ValueSet/device-type-weight
       - ValueSet/device-type-heart-rate
-      - ValueSet/vital-signs-body-position
-      - ValueSet/vital-signs-sleep-status
+      - ValueSet/body-position
+      - ValueSet/sleep-status
       - ValueSet/exertion-phase
       - ValueSet/measurement-environment
       - ValueSet/numeric-result-interpretation

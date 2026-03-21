@@ -2,7 +2,7 @@ ValueSet: HeartRateObservationSNOMED
 Id: heart-rate-observation-snomed
 Title: "Heart Rate observation codes (SNOMED CT)"
 Description: "SNOMED CT codes for heart rate vital sign measurements in Observation.code."
-* ^url = "https://tx.hl7.lt/fhir/ValueSet/heart-rate-observation-snomed"
+* ^url = $heart-rate-observation-snomed-vs-url
 * ^version = "1.0.0"
 * ^status = #active
 * ^experimental = false

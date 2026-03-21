@@ -8,7 +8,7 @@ Description: "UCUM rate units for recording vital signs including heart and resp
 * ^extension[=].valueBoolean = true
 * ^extension[+].url = "http://hl7.org/fhir/StructureDefinition/structuredefinition-wg"
 * ^extension[=].valueCode = #oo
-* ^url = "https://tx.hl7.lt/fhir/ValueSet/vital-signs-rate-unit"
+* ^url = $vital-signs-rate-unit-vs-url
 * ^version = "6.0.0"
 * ^status = #active
 * ^experimental = false

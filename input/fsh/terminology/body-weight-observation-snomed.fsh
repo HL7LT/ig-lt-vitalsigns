@@ -2,7 +2,7 @@ ValueSet: BodyWeightObservationSNOMED
 Id: body-weight-observation-snomed
 Title: "Body Weight observation codes (SNOMED CT)"
 Description: "SNOMED CT codes for body weight vital sign measurements in Observation.code."
-* ^url = "https://tx.hl7.lt/fhir/ValueSet/body-weight-observation-snomed"
+* ^url = $body-weight-observation-snomed-vs-url
 * ^version = "1.0.0"
 * ^status = #active
 * ^experimental = false

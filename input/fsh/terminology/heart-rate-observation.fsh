@@ -6,7 +6,7 @@ Description: "This value set defines the set of LOINC codes considered to be app
 * ^meta.profile = "http://hl7.org/fhir/StructureDefinition/shareablevalueset"
 * ^extension.url = "http://hl7.org/fhir/StructureDefinition/structuredefinition-wg"
 * ^extension.valueCode = #oo
-* ^url = "https://tx.hl7.lt/fhir/ValueSet/heart-rate-observation"
+* ^url = $heart-rate-observation-vs-url
 * ^version = "6.0.0"
 * ^status = #active
 * ^experimental = false

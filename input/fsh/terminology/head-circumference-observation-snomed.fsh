@@ -2,7 +2,7 @@ ValueSet: HeadCircumferenceObservationSNOMED
 Id: head-circumference-observation-snomed
 Title: "Head Circumference observation codes (SNOMED CT)"
 Description: "SNOMED CT codes for head circumference vital sign measurements in Observation.code."
-* ^url = "https://tx.hl7.lt/fhir/ValueSet/head-circumference-observation-snomed"
+* ^url = $head-circumference-observation-snomed-vs-url
 * ^version = "1.0.0"
 * ^status = #active
 * ^experimental = false

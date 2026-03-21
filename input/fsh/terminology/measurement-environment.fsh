@@ -2,7 +2,7 @@ ValueSet: MeasurementEnvironment
 Id: measurement-environment
 Title: "Measurement Environment"
 Description: "Environment that indicate the surroundings the individual was in during the measurement (i.e. home, clinic, hospital, etc.)."
-* ^url = "https://tx.hl7.lt/fhir/ValueSet/measurement-environment"
+* ^url = $measurement-environment-vs-url
 * ^version = "1.0.0"
 * ^status = #active
 * ^experimental = false

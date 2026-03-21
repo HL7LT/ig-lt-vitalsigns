@@ -2,7 +2,7 @@ ValueSet: ExertionPhase
 Id: exertion-phase
 Title: "Exertion Phase"
 Description: "SNOMED CT code system values that contains terms for exercise associated with a measurement."
-* ^url = "https://tx.hl7.lt/fhir/ValueSet/exertion-phase"
+* ^url = $exertion-phase-vs-url
 * ^version = "1.0.0"
 * ^status = #active
 * ^experimental = false

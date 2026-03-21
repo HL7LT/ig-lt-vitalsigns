@@ -1,8 +1,8 @@
-ValueSet: VitalSignsBodyPosition
-Id: vital-signs-body-position
+ValueSet: BodyPositionVitalSigns
+Id: body-position
 Title: "Body Position used in Vital Signs Measurements"
 Description: "SNOMED CT code system values the position in which the individual was in during a measurement."
-* ^url = "https://tx.hl7.lt/fhir/ValueSet/body-position"
+* ^url = $body-position-vs-url
 * ^version = "1.0.0"
 * ^status = #active
 * ^experimental = false

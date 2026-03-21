@@ -2,7 +2,7 @@ ValueSet: DeviceTypeHeartRate
 Id: device-type-heart-rate
 Title: "Device Types for Heart Rate Measurement"
 Description: "SELECT SNOMED CT code system values that describe the instrument used to measure the heart rate."
-* ^url = "https://tx.hl7.lt/fhir/ValueSet/heart-rate-measurement-device"
+* ^url = $device-type-heart-rate-vs-url
 * ^version = "1.0.0"
 * ^status = #active
 * ^experimental = false

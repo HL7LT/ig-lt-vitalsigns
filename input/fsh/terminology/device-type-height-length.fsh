@@ -2,7 +2,7 @@ ValueSet: DeviceTypeHeightLength
 Id: device-type-height-length
 Title: "Device Types for Height Length Measurement"
 Description: "SNOMED CT code system values that describe the instrument used to measure the body height/length."
-* ^url = "https://tx.hl7.lt/fhir/ValueSet/device-type-height-length"
+* ^url = $device-type-height-length-vs-url
 * ^version = "1.0.0"
 * ^status = #active
 * ^experimental = false

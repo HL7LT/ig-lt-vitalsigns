@@ -2,7 +2,7 @@ ValueSet: DeviceTypeWeight
 Id: device-type-weight
 Title: "Device Types for Weight Measurement"
 Description: "SNOMED CT code system values that describe the instrument used to measure the body weight."
-* ^url = "https://tx.hl7.lt/fhir/ValueSet/device-type-weight"
+* ^url = $device-type-weight-vs-url
 * ^version = "1.0.0"
 * ^status = #active
 * ^experimental = false

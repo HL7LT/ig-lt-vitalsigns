@@ -2,7 +2,7 @@ ValueSet: NumericResultInterpretationNonPanic
 Id: numeric-result-interpretation-non-panic
 Title: "Numeric Result Interpretation without panic values, value set"
 Description: "The HL7 V3:ObservationInterpretation code set (OID: 2.16.840.1.113883.5.83) that describes interpretations associated with a measured value, constrained to terms that are not those associated with 'panic' terms."
-* ^url = "https://tx.hl7.lt/fhir/ValueSet/numeric-result-interpretation-non-panic"
+* ^url = $numeric-result-interpretation-non-panic-vs-url
 * ^version = "1.0.0"
 * ^status = #active
 * ^experimental = false

@@ -2,7 +2,7 @@ ValueSet: NumericResultInterpretation
 Id: numeric-result-interpretation
 Title: "Numeric Result Interpretation value set"
 Description: "The HL7 V3:ObservationInterpretation code set (OID: 2.16.840.1.113883.5.83) that describes interpretations associated with a measured value."
-* ^url = "https://tx.hl7.lt/fhir/ValueSet/numeric-result-interpretation"
+* ^url = $numeric-result-interpretation-vs-url
 * ^version = "1.0.0"
 * ^status = #active
 * ^experimental = false

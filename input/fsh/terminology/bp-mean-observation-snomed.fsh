@@ -2,7 +2,7 @@ ValueSet: BloodPressureMeanObservationSNOMED
 Id: bp-mean-observation-snomed
 Title: "BP Mean observation codes (SNOMED CT)"
 Description: "SNOMED CT codes for mean arterial blood pressure component in Observation.component.code."
-* ^url = "https://tx.hl7.lt/fhir/ValueSet/bp-mean-observation-snomed"
+* ^url = $bp-mean-observation-snomed-vs-url
 * ^version = "1.0.0"
 * ^status = #active
 * ^experimental = false

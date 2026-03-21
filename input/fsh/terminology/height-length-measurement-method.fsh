@@ -2,7 +2,7 @@ ValueSet: HeightLengthMeasurementMethod
 Id: height-length-measurement-method
 Title: "Height Length Measurement Method"
 Description: "SNOMED CT code system values that describe how the height/length was measured."
-* ^url = "https://tx.hl7.lt/fhir/ValueSet/height-length-measurement-method"
+* ^url = $height-length-measurement-method-vs-url
 * ^version = "1.0.0"
 * ^status = #active
 * ^experimental = false

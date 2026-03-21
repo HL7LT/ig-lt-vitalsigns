@@ -12,7 +12,6 @@ Context: Observation, Specimen.collection
 * ^extension[=].valueCode = #trial-use
 * ^extension[+].url = "http://hl7.org/fhir/StructureDefinition/structuredefinition-type-characteristics"
 * ^extension[=].valueCode = #can-bind
-//* ^url = "http://hl7.org/fhir/StructureDefinition/observation-bodyPosition"
 * ^identifier.system = "urn:ietf:rfc:3986"
 * ^identifier.value = "urn:oid:2.16.840.1.113883.4.642.5.1472"
 * ^version = "5.1.0"
@@ -27,5 +26,5 @@ Context: Observation, Specimen.collection
 * . ^definition = "The position of the body when the observation was done, e.g. standing, sitting. To be used only when the body position in not precoordinated in the observation code."
 * value[x] 1..
 * value[x] only CodeableConcept
-* valueCodeableConcept from VitalSignsBodyPosition (extensible)
+* valueCodeableConcept from BodyPositionVitalSigns (extensible)
 * valueCodeableConcept ^sliceName = "valueCodeableConcept"

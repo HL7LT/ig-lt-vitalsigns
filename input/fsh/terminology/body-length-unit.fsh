@@ -8,7 +8,7 @@ Description: "UCUM units for recording body length measures such as height and h
 * ^extension[=].valueBoolean = false
 * ^extension[+].url = "http://hl7.org/fhir/StructureDefinition/structuredefinition-wg"
 * ^extension[=].valueCode = #oo
-* ^url = "https://tx.hl7.lt/fhir/ValueSet/body-length-unit"
+* ^url = $body-length-unit-vs-url
 * ^identifier[0].system = "urn:ietf:rfc:3986"
 * ^identifier[=].value = "urn:oid:2.16.840.1.113883.4.642.3.958"
 * ^identifier[+].use = #old

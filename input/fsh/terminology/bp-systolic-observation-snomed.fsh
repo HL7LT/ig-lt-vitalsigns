@@ -2,7 +2,7 @@ ValueSet: BloodPressureSystolicObservationSNOMED
 Id: bp-systolic-observation-snomed
 Title: "BP Systolic observation codes (SNOMED CT)"
 Description: "SNOMED CT codes for systolic blood pressure component in Observation.component.code."
-* ^url = "https://tx.hl7.lt/fhir/ValueSet/bp-systolic-observation-snomed"
+* ^url = $bp-systolic-observation-snomed-vs-url
 * ^version = "1.0.0"
 * ^status = #active
 * ^experimental = false

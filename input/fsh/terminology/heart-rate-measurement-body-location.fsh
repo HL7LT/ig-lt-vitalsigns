@@ -2,7 +2,7 @@ ValueSet: HeartRateMeasurementBodyLocation
 Id: heart-rate-measurement-body-location
 Title: "Heart Rate Measurement Body Location"
 Description: "SNOMED CT code system values that describe where on the body the heart rate was measured."
-* ^url = "https://tx.hl7.lt/fhir/ValueSet/heart-rate-measurement-body-location"
+* ^url = $heart-rate-measurement-body-location-vs-url
 * ^version = "1.0.0"
 * ^status = #active
 * ^experimental = false

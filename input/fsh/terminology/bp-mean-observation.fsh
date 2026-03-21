@@ -2,7 +2,7 @@ ValueSet: BloodPressureMeanObservation
 Id: bp-mean-observation
 Title: "BP Mean observation codes (LOINC)"
 Description: "LOINC codes for mean arterial blood pressure component in Observation.component.code."
-* ^url = "https://tx.hl7.lt/fhir/ValueSet/bp-mean-observation"
+* ^url = $bp-mean-observation-vs-url
 * ^version = "1.0.0"
 * ^status = #active
 * ^experimental = false

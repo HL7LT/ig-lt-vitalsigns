@@ -121,6 +121,8 @@ Alias: $body-height-observation-snomed-vs-url = https://tx.hl7.lt/fhir/ValueSet/
 // Body Length Unit
 Alias: $body-length-unit-vs-url = https://tx.hl7.lt/fhir/ValueSet/body-length-unit
 
+Alias: $body-position-vs-url = https://tx.hl7.lt/fhir/ValueSet/body-position
+
 // Body Weight Associated Situation
 Alias: $body-weight-associated-situation-vs-url = https://tx.hl7.lt/fhir/ValueSet/body-weight-associated-situation
 
@@ -175,14 +177,13 @@ Alias: $numeric-result-interpretation-non-panic-vs-url = https://tx.hl7.lt/fhir/
 // Numeric Result Interpretation
 Alias: $numeric-result-interpretation-vs-url = https://tx.hl7.lt/fhir/ValueSet/numeric-result-interpretation
 
+Alias: $sleep-status-vs-url = https://tx.hl7.lt/fhir/ValueSet/sleep-status
+
 // Vital Signs Body Position
 Alias: $vital-signs-body-position-vs-url = https://tx.hl7.lt/fhir/ValueSet/body-position
 
 // Vital Signs Rate Unit
-Alias: $vital-signs-rate-unit-vs-url = https://tx.hl7.lt/fhir/ValueSet/vital-signs-rate-unit
-
-// Vital Signs Sleep Status
-Alias: $vital-signs-sleep-status-vs-url = https://tx.hl7.lt/fhir/ValueSet/sleep-status
+Alias: $vital-signs-rate-unit-vs-url = https://tx.hl7.lt/fhir/ValueSet/rate-unit
 
 // Waist Circumference Observation (LOINC)
 Alias: $waist-circumference-observation-loinc-vs-url = https://tx.hl7.lt/fhir/ValueSet/waist-circumference-observation-loinc

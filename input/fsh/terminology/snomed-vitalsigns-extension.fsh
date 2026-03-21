@@ -2,7 +2,7 @@ CodeSystem: SnomedVitalSignsExtension
 Id: snomed-vitalsigns-extension
 Title: "SNOMED CT Vital Signs Extension"
 Description: "A set of codes that are defined in the Vital Signs extension to the SNOMED CT code system. To be used until they are adopted by SNOMED CT."
-* ^url = "https://tx.hl7.lt/fhir/CodeSystem/snomed-vitalsigns-extension"
+* ^url = $snomed-vitalsigns-extension-cs-url
 * ^version = "2.0.0"
 * ^status = #draft
 * ^experimental = true

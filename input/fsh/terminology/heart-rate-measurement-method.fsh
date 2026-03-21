@@ -2,7 +2,7 @@ ValueSet: HeartRateMeasurementMethod
 Id: heart-rate-measurement-method
 Title: "Heart Rate Measurement Method"
 Description: "SNOMED CT code system values that describe how the heart rate was measured."
-* ^url = "https://tx.hl7.lt/fhir/ValueSet/heart-rate-measurement-method"
+* ^url = $heart-rate-measurement-method-vs-url
 * ^version = "1.0.0"
 * ^status = #active
 * ^experimental = false

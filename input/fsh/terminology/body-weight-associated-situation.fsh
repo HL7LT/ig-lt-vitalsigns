@@ -2,7 +2,7 @@ ValueSet: BodyWeightAssociatedSituation
 Id: body-weight-associated-situation
 Title: "Body Weight Associated Situation"
 Description: "SNOMED CT code system values and temporary code system values that describe situations to be considered when interpreting measured values."
-* ^url = "https://tx.hl7.lt/fhir/ValueSet/body-weight-associated-situation"
+* ^url = $body-weight-associated-situation-vs-url
 * ^version = "1.0.0"
 * ^status = #active
 * ^experimental = false

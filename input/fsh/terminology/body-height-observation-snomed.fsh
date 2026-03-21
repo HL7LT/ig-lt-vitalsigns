@@ -2,7 +2,7 @@ ValueSet: BodyHeightObservationSNOMED
 Id: body-height-observation-snomed
 Title: "Body Height observation codes (SNOMED CT)"
 Description: "SNOMED CT codes for body height vital sign measurements in Observation.code."
-* ^url = "https://tx.hl7.lt/fhir/ValueSet/body-height-observation-snomed"
+* ^url = $body-height-observation-snomed-vs-url
 * ^version = "1.0.0"
 * ^status = #active
 * ^experimental = false

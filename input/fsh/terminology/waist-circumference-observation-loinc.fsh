@@ -2,7 +2,7 @@ ValueSet: WaistCircumferenceObservationLOINC
 Id: waist-circumference-observation-loinc
 Title: "Waist Circumference observation codes (LOINC)"
 Description: "LOINC codes for waist circumference vital sign measurements in Observation.code."
-* ^url = "https://tx.hl7.lt/fhir/ValueSet/waist-circumference-observation-loinc"
+* ^url = $waist-circumference-observation-loinc-vs-url
 * ^version = "1.0.0"
 * ^status = #active
 * ^experimental = false

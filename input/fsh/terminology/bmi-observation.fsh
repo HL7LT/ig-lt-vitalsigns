@@ -2,7 +2,7 @@ ValueSet: BMIObservation
 Id: bmi-observation
 Title: "Body Mass Index observation codes (LOINC)"
 Description: "LOINC codes for body mass index vital sign measurements in Observation.code."
-* ^url = "https://tx.hl7.lt/fhir/ValueSet/bmi-observation"
+* ^url = $bmi-observation-vs-url
 * ^version = "1.0.0"
 * ^status = #active
 * ^experimental = false

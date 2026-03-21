@@ -2,7 +2,7 @@ ValueSet: DeviceTypeBloodPressure
 Id: device-type-blood-pressure
 Title: "Device Types for Blood Pressure Measurement"
 Description: "SNOMED CT code system values that describe the isntrument used to measure the blood pressure."
-* ^url = "https://tx.hl7.lt/fhir/ValueSet/device-type-blood-pressure"
+* ^url = $device-type-blood-pressure-vs-url
 * ^version = "1.0.0"
 * ^status = #active
 * ^experimental = false

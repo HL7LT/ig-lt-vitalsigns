@@ -2,7 +2,7 @@ ValueSet: WaistCircumferenceObservationSNOMED
 Id: waist-circumference-observation-snomed
 Title: "Waist Circumference observation codes (SNOMED CT)"
 Description: "SNOMED CT codes for waist circumference vital sign measurements in Observation.code."
-* ^url = "https://tx.hl7.lt/fhir/ValueSet/waist-circumference-observation-snomed"
+* ^url = $waist-circumference-observation-snomed-vs-url
 * ^version = "1.0.0"
 * ^status = #active
 * ^experimental = false

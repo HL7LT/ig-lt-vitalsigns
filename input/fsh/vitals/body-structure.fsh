@@ -12,5 +12,5 @@ Description: "Body Structure profile to describe where on the body a blood press
   * laterality MS 
   * bodyLandmarkOrientation	..1
     * landmarkDescription 1..1 MS
-    * landmarkDescription from VitalSignsBodyPosition (extensible)
+    * landmarkDescription from BodyPositionVitalSigns (extensible)
     * landmarkDescription ^short = "Body Position"

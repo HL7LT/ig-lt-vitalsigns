@@ -2,7 +2,7 @@ ValueSet: BloodPressureDiastolicObservationSNOMED
 Id: bp-diastolic-observation-snomed
 Title: "BP Diastolic observation codes (SNOMED CT)"
 Description: "SNOMED CT codes for diastolic blood pressure component in Observation.component.code."
-* ^url = "https://tx.hl7.lt/fhir/ValueSet/bp-diastolic-observation-snomed"
+* ^url = $bp-diastolic-observation-snomed-vs-url
 * ^version = "1.0.0"
 * ^status = #active
 * ^experimental = false
