@@ -5,9 +5,6 @@
 // PROFILES
 // =====================
 
-// Base Obeservation Profile
-Alias: $observation-lt-url = https://hl7.lt/fhir/base/StructureDefinition/observation-lt
-
 // Blood Pressure Panel Profile
 Alias: $blood-pressure-panel-url = https://hl7.lt/fhir/vitalsigns/StructureDefinition/blood-pressure-panel
 
