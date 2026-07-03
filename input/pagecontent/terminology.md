@@ -33,7 +33,7 @@ All quantity values use UCUM; the IG restricts allowed units via the listed Valu
 - **Measurement method**: [bp-measurement-method](ValueSet-bp-measurement-method.html) — how blood pressure was obtained (e.g. auscultation, oscillometry).
 - **Body location**: [bp-measurement-body-location](ValueSet-bp-measurement-body-location.html) — site of measurement (e.g. arm, wrist).
 - **Cuff size**: [bp-cuff-size](ValueSet-bp-cuff-size.html) — cuff size when relevant.
-- **Body position**: [vital-signs-body-position](ValueSet-vital-signs-body-position.html) (sitting, standing, etc.).
+- **Body position**: [body-position](ValueSet-body-position.html) (sitting, standing, etc.).
 
 ## Heart rate context
 
@@ -52,8 +52,8 @@ ValueSets for device type are used by Device profiles:
 
 ## Other context
 
-- **Body position**: [vital-signs-body-position](ValueSet-vital-signs-body-position.html) — used by the [body-position](StructureDefinition-body-position.html) extension.
-- **Sleep status**: [vital-signs-sleep-status](ValueSet-vital-signs-sleep-status.html) — used by the [sleep-status](StructureDefinition-sleep-status.html) extension.
+- **Body position**: [body-position](ValueSet-body-position.html) — used by the [body-position](StructureDefinition-body-position.html) extension.
+- **Sleep status**: [sleep-status](ValueSet-sleep-status.html) — used by the [sleep-status](StructureDefinition-sleep-status.html) extension.
 - **Measurement environment**: [measurement-environment](ValueSet-measurement-environment.html) — e.g. home, ambulatory.
 - **Body weight associated situation**: [body-weight-associated-situation](ValueSet-body-weight-associated-situation.html) — e.g. dressed, after dialysis.
 - **Result interpretation**: [numeric-result-interpretation](ValueSet-numeric-result-interpretation.html), [waist-circumference-result-interpretation](ValueSet-waist-circumference-result-interpretation.html).

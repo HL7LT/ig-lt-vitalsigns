@@ -33,7 +33,7 @@ Visos kiekybinės reikšmės naudoja UCUM; gidas riboja leidžiamus vienetus per
 - **Matavimo metodas**: [bp-measurement-method](ValueSet-bp-measurement-method.html) — kaip buvo išmatuotas kraujospūdis (pvz., auskuliacija, oscilometrija).
 - **Kūno vieta**: [bp-measurement-body-location](ValueSet-bp-measurement-body-location.html) — matavimo vieta (pvz., ranka, riešas).
 - **Manžetės dydis**: [bp-cuff-size](ValueSet-bp-cuff-size.html) — manžetės dydis, kai aktualus.
-- **Kūno padėtis**: [vital-signs-body-position](ValueSet-vital-signs-body-position.html) (sėdint, stovint ir pan.).
+- **Kūno padėtis**: [body-position](ValueSet-body-position.html) (sėdint, stovint ir pan.).
 
 ## Širdies ritmo kontekstas
 
@@ -52,8 +52,8 @@ Prietaisų tipų reikšmių rinkiniai naudojami prietaisų profiliuose:
 
 ## Kitas kontekstas
 
-- **Kūno padėtis**: [vital-signs-body-position](ValueSet-vital-signs-body-position.html) — naudojamas [body-position](StructureDefinition-body-position.html) plėtinyje.
-- **Miego būsena**: [vital-signs-sleep-status](ValueSet-vital-signs-sleep-status.html) — naudojamas [sleep-status](StructureDefinition-sleep-status.html) plėtinyje.
+- **Kūno padėtis**: [body-position](ValueSet-body-position.html) — naudojamas [body-position](StructureDefinition-body-position.html) plėtinyje.
+- **Miego būsena**: [sleep-status](ValueSet-sleep-status.html) — naudojamas [sleep-status](StructureDefinition-sleep-status.html) plėtinyje.
 - **Matavimo aplinka**: [measurement-environment](ValueSet-measurement-environment.html) — pvz., namų sąlygos, ambulatorinė.
 - **Kūno svorio susijusi situacija**: [body-weight-associated-situation](ValueSet-body-weight-associated-situation.html) — pvz., apsirengęs, po dializės.
 - **Rezultato interpretacija**: [numeric-result-interpretation](ValueSet-numeric-result-interpretation.html), [waist-circumference-result-interpretation](ValueSet-waist-circumference-result-interpretation.html).
