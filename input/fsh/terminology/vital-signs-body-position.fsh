@@ -16,7 +16,7 @@ Description: "SNOMED CT code system values the position in which the individual 
 * $sct#10904000 "Orthostatic body position (finding)"
 * $sct#1240000 "Prone body position (finding)"
 * $sct#102538003 "Recumbent body position (finding)"
-* $sct#423413008 "Reverse trendelenburg positioning (finding)"
+* $sct#423413008 "Reverse trendelenburg positioning (procedure)"
 * $sct#102535000 "Right lateral decubitus position (finding)"
 * $sct#415346000 "Right lateral tilt (finding)"
 * $sct#33586001 "Sitting position (finding)"

@@ -14,7 +14,7 @@ Description: "SNOMED CT code system values that describe the instrument used to 
 * $sct#720689000 "Chair scale (physical object)"
 * $sct#469204003 "Floor scale, electronic (physical object)"
 * $sct#469787007 "Floor scale, mechanical (physical object)"
-* $sct#58514003 "Infant scale (physical object)"
+* $sct#58514003 "Infant scale, device (physical object)"
 * $sct#462242008 "Patient sling scale (physical object)"
 * $sct#466532009 "Wheelchair scale (physical object)"
 * SnomedVitalSignsExtension#24181000205106 "Patient lift scale (physical object)"

@@ -11,7 +11,7 @@ Description: "SELECT SNOMED CT code system values that describe the instrument u
 * ^copyright = "This value set includes content from SNOMED CT, which is copyright © 2002+ International Health Terminology Standards Development Organisation (IHTSDO), and distributed by agreement between IHTSDO and HL7. Implementer use of SNOMED CT is not covered by this agreement"
 * $sct#467178001 "Bedside heart rate monitor (physical object)"
 * $sct#43770009 "Doppler device (physical object)"
-* $sct#86184003 "Electrocardiographic monitor and recorder (physical object)"
+* $sct#86184003 "Electrocardiographic monitor and recorder, device (physical object)"
 * $sct#469801002 "Invasive blood pressure monitor (physical object)"
 * $sct#258057004 "Non-invasive blood pressure monitor (physical object)"
 * $sct#448703006 "Pulse oximeter (physical object)"
