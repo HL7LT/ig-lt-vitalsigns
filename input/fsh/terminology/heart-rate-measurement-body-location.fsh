@@ -19,7 +19,7 @@ Description: "SNOMED CT code system values that describe where on the body the h
 * $sct#723961002 "Structure of left brachial artery (body structure)"
 * $sct#792817008 "Structure of left dorsalis pedis artery (body structure)"
 * $sct#113270003 "Structure of left femoral artery (body structure)"
-* $sct#25885001 "Structure of left popliteal artery (body structure)"
+* $sct#25885001 "Left popliteal artery structure (body structure)"
 * $sct#214912001 "Structure of left posterior tibial artery (body structure)"
 * $sct#50408007 "Structure of left pulmonary artery"
 * $sct#368504007 "Structure of left radial artery (body structure)"

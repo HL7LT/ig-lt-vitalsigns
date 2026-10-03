@@ -9,7 +9,7 @@ name: LTVitalSigns
 title: Lithuanian Vital Signs Implementation Guide
 description: Lithuanian Vital Signs Implementation Guide
 status: draft # draft | active | retired | unknown
-version: 0.0.1
+version: 0.1.0
 fhirVersion: 5.0.0 # https://www.hl7.org/fhir/valueset-FHIR-version.html
 copyrightYear: 2025+
 releaseLabel: ci-build
@@ -22,8 +22,8 @@ publisher:
 
 # don't change the order of dependencies!
 dependencies:
-  lt.hl7.fhir.base: 0.3.0
-  lt.hl7.fhir.eu: 0.0.2
+  lt.hl7.fhir.base: 0.4.0
+  lt.hl7.fhir.eu: 0.0.3
   hl7.fhir.eu.base-r5: 0.1.0
 
 
@@ -65,52 +65,54 @@ pages:
 
 
 parameters:
-  special-url-base: https://hl7.lt/fhir
-  special-url: 
+  # Canonicals this guide deliberately hosts outside its own base. See
+  # _audit/fix-special-url.js for why each namespace is re-hosted here.
+  special-url-base:
     - https://tx.hl7.lt/fhir
-    - https://tx.hl7.lt/fhir/ValueSet/bp-cuff-size
-    - https://tx.hl7.lt/fhir/ValueSet/bp-diastolic-observation
-    - https://tx.hl7.lt/fhir/ValueSet/bp-measurement-body-location
-    - https://tx.hl7.lt/fhir/ValueSet/bp-measurement-method
-    - https://tx.hl7.lt/fhir/ValueSet/bp-panel-observation
-    - https://tx.hl7.lt/fhir/ValueSet/bp-panel-observation-snomed
-    - https://tx.hl7.lt/fhir/ValueSet/bp-systolic-observation
-    - https://tx.hl7.lt/fhir/ValueSet/bp-systolic-observation-snomed
-    - https://tx.hl7.lt/fhir/ValueSet/bp-diastolic-observation-snomed
-    - https://tx.hl7.lt/fhir/ValueSet/bp-mean-observation
-    - https://tx.hl7.lt/fhir/ValueSet/bp-mean-observation-snomed
-    - https://tx.hl7.lt/fhir/ValueSet/bp-unit
+  special-url:
+    - https://tx.hl7.lt/fhir/CodeSystem/snomed-vitalsigns-extension
     - https://tx.hl7.lt/fhir/ValueSet/bmi-observation
     - https://tx.hl7.lt/fhir/ValueSet/bmi-observation-snomed
     - https://tx.hl7.lt/fhir/ValueSet/bmi-unit
     - https://tx.hl7.lt/fhir/ValueSet/body-height-observation
     - https://tx.hl7.lt/fhir/ValueSet/body-height-observation-snomed
     - https://tx.hl7.lt/fhir/ValueSet/body-length-unit
+    - https://tx.hl7.lt/fhir/ValueSet/body-position
     - https://tx.hl7.lt/fhir/ValueSet/body-weight-associated-situation
     - https://tx.hl7.lt/fhir/ValueSet/body-weight-observation
     - https://tx.hl7.lt/fhir/ValueSet/body-weight-observation-snomed
+    - https://tx.hl7.lt/fhir/ValueSet/bp-cuff-size
+    - https://tx.hl7.lt/fhir/ValueSet/bp-diastolic-observation
+    - https://tx.hl7.lt/fhir/ValueSet/bp-diastolic-observation-snomed
+    - https://tx.hl7.lt/fhir/ValueSet/bp-mean-observation
+    - https://tx.hl7.lt/fhir/ValueSet/bp-mean-observation-snomed
+    - https://tx.hl7.lt/fhir/ValueSet/bp-measurement-body-location
+    - https://tx.hl7.lt/fhir/ValueSet/bp-measurement-method
+    - https://tx.hl7.lt/fhir/ValueSet/bp-panel-observation
+    - https://tx.hl7.lt/fhir/ValueSet/bp-panel-observation-snomed
+    - https://tx.hl7.lt/fhir/ValueSet/bp-systolic-observation
+    - https://tx.hl7.lt/fhir/ValueSet/bp-systolic-observation-snomed
+    - https://tx.hl7.lt/fhir/ValueSet/bp-unit
     - https://tx.hl7.lt/fhir/ValueSet/device-type-blood-pressure
-    - https://tx.hl7.lt/fhir/ValueSet/heart-rate-measurement-device
     - https://tx.hl7.lt/fhir/ValueSet/device-type-height-length
     - https://tx.hl7.lt/fhir/ValueSet/device-type-weight
     - https://tx.hl7.lt/fhir/ValueSet/exertion-phase
-    - https://tx.hl7.lt/fhir/ValueSet/heart-rate-measurement-body-location
-    - https://tx.hl7.lt/fhir/ValueSet/heart-rate-measurement-method
     - https://tx.hl7.lt/fhir/ValueSet/head-circumference-observation
     - https://tx.hl7.lt/fhir/ValueSet/head-circumference-observation-snomed
+    - https://tx.hl7.lt/fhir/ValueSet/heart-rate-measurement-body-location
+    - https://tx.hl7.lt/fhir/ValueSet/heart-rate-measurement-device
+    - https://tx.hl7.lt/fhir/ValueSet/heart-rate-measurement-method
     - https://tx.hl7.lt/fhir/ValueSet/heart-rate-observation
     - https://tx.hl7.lt/fhir/ValueSet/heart-rate-observation-snomed
     - https://tx.hl7.lt/fhir/ValueSet/height-length-measurement-method
     - https://tx.hl7.lt/fhir/ValueSet/measurement-environment
-    - https://tx.hl7.lt/fhir/ValueSet/numeric-result-interpretation-non-panic
     - https://tx.hl7.lt/fhir/ValueSet/numeric-result-interpretation
-    - https://tx.hl7.lt/fhir/ValueSet/body-position
+    - https://tx.hl7.lt/fhir/ValueSet/numeric-result-interpretation-non-panic
     - https://tx.hl7.lt/fhir/ValueSet/rate-unit
     - https://tx.hl7.lt/fhir/ValueSet/sleep-status
     - https://tx.hl7.lt/fhir/ValueSet/waist-circumference-observation-loinc
     - https://tx.hl7.lt/fhir/ValueSet/waist-circumference-observation-snomed
     - https://tx.hl7.lt/fhir/ValueSet/waist-circumference-result-interpretation
-    - https://tx.hl7.lt/fhir/CodeSystem/snomed-vitalsigns-extension
 
   excludettl: true
   shownav: true
